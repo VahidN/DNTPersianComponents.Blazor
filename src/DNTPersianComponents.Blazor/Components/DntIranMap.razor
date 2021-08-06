@@ -1,0 +1,83 @@
+﻿@namespace DNTPersianComponents.Blazor
+
+<div id="@MapId" style="direction: rtl; text-align: right; font-family: @FontFamily; font-size: @FontSize"
+	class="m-@Margin w-100">
+	<svg version="1.1"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			viewBox="0 0 800 600"
+			xml:space="preserve"
+			class="h-100 w-100"  style="@MainSvgStyle">
+		<g style="transform: scale(1,1)" id="province">
+		    @foreach(var provinceObject in IranProvinceMapData.Values)
+			{
+			    if(provinceObject.Value?.PathData is null)
+				{
+				   continue;
+				}
+				<a @onclick="@(args => ProvinceClickedAsync(@provinceObject.Key, args))"
+					@onmouseout="@(_ => ProvinceOnMouseOut())"
+					@onmouseover="@(_ => ProvinceOnMouseOver(@provinceObject.Key))">
+					<path
+						class="@IranProvincesCss[provinceObject.Key]"
+						style="@ProvinceStyle;@IranProvincesStyles[provinceObject.Key]"
+						d="@provinceObject.Value.PathData" />
+                    @if(ShowProvincesNames)
+					{
+						foreach(var attributesDictionary in provinceObject.Value.TextsAttributes)
+						{
+							<text>
+								<text
+									style="@ProvinceNameStyle;@ProvinceNamesStyles[provinceObject.Key]"
+									@attributes="@attributesDictionary">@attributesDictionary["text"]</text>
+							</text>
+						}
+					}
+				</a>
+			}
+		</g>
+		<g style="transform: scale(1,1)" id="border">
+			<path style="fill: @BorderFill; stroke-width: @BorderStrokeWidth; stroke: @BorderStroke;"
+					d="@IranProvinceMapData.IranBorderPathData"/>
+		</g>
+		<g style="transform: scale(1,1)" id="sea">
+			<path style="fill: @SeaFill;" d="@IranProvinceMapData.CaspianSeaPathData"/>
+			<path style="fill: @SeaFill;" d="@IranProvinceMapData.PersianGulfPathData"/>
+		</g>
+		<g class="@MapSeaNamesCss" style="transform: scale(1,1); @MapSeaNamesStyle">
+			<text style="fill: @SeaNamesFill;" dx="1em" text-anchor="middle" y="537" x="405">خلیج فارس</text>
+			<text style="fill: @SeaNamesFill;" dx="1em" text-anchor="middle" y="90" x="358">دریای خزر</text>
+		</g>
+		<g style="transform: scale(1,1)" id="lake">
+			<path style="fill: @LakeFill;" d="@IranProvinceMapData.UrmiaLakePathData"/>
+		</g>
+		<g style="transform: scale(1,1)" id="island">
+			@foreach(var itemPath in IranProvinceMapData.IranIslandsPathData)
+			{
+				<path style="fill: @IslandFill;" d="@itemPath"/>
+			}
+		</g>
+	</svg>
+</div>
+
+@if(IranProvincesTitles.Count > 0)
+{
+	foreach(IranProvince province in Enum.GetValues(typeof(IranProvince)))
+	{
+		var title = IranProvincesTitles[province];
+		if(string.IsNullOrWhiteSpace(title) || IranProvincesBody is null)
+		{
+		   continue;
+		}
+		<DntBsPopOver
+			PopOverTop="@ClickedPostions[province]?.PosY"
+			PopOverLeft="@ClickedPostions[province]?.PosX"
+			HeaderLabel="@title"
+			CloseTitle="بستن"
+			@bind-IsVisible="@PopOverIsVisible[province]">
+			<PopOverBody>
+			  @IranProvincesBody(province)
+			</PopOverBody>
+		</DntBsPopOver>
+	}
+}

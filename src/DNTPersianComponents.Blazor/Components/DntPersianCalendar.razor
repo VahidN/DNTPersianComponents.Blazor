@@ -1,0 +1,131 @@
+@namespace DNTPersianComponents.Blazor
+
+<div dir="rtl">
+  @if(ShowYearMonthDropdowns)
+  {
+    <div class="row mb-@MarginBottom">
+        <div class="col-lg-5 col-md-12 mb-@MarginBottom">
+            <div class="input-group">
+                <button class="@NextPreviousButtonsCss" title="قبلى" type="button" @onclick="@ShowPreviousMonthAsync">
+                    <span class="@ShowPreviousMonthIcon" role="img" aria-label="قبلى"></span>
+                </button>
+                <select class="form-select" id="persianMonth"
+                        value="@SelectedMonth"
+                        @onchange="@OnSelectedMonthChangedAsync">
+                       <option selected></option>
+                       @foreach(var month in PersianCulture.PersianMonthNames)
+                       {
+                          <option value="@month.Key" selected="@(SelectedMonth == month.Key)">@month.Value</option>
+                       }
+                </select>
+                <button class="@NextPreviousButtonsCss" title="بعدى" type="button" @onclick="@ShowNextMonthAsync">
+                    <span class="@ShowNextMonthIcon" role="img" aria-label="بعدى"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-12 mb-@MarginBottom d-flex justify-content-center align-self-center">
+            <DntBsInlineSpinner IsVisible="@IsLoading" CurrentColor="@SpinnerColor" Width="2" Height="2" />
+        </div>
+        <div class="col-lg-5 col-md-12 mb-@MarginBottom">
+            <div class="input-group">
+                <button class="@NextPreviousButtonsCss" title="قبلى" type="button" @onclick="@ShowPreviousYearAsync">
+                    <span class="@ShowPreviousYearIcon" role="img" aria-label="قبلى"></span>
+                </button>
+                <select class="form-select" id="persianYear"
+                        value="@SelectedYear"
+                        @onchange="@OnSelectedYearChangedAsync">
+                       <option selected></option>
+                       @for(var year = FromYear; year <= ToYear; year++)
+                       {
+                           <option value="@year" selected="@(SelectedYear == year)">@year.ToPersianNumbers()</option>
+                       }
+                </select>
+                <button class="@NextPreviousButtonsCss" title="بعدى" type="button" @onclick="@ShowNextYearAsync">
+                    <span class="@ShowNextYearIcon" role="img" aria-label="بعدى"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+  }
+    <div class="table-responsive-lg">
+        <table class="@TableCss">
+            <thead class="@TableHeadCss">
+                <tr>
+                    @foreach (var dayWeek in PersianDayNamesOfWeek)
+                    {
+                        <th class="text-center" scope="col">@dayWeek</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                    @{
+                        const int rowItems = 7;
+                        var colWidth = 100D / rowItems;
+                        var row = 0;
+                        IEnumerable<PersianDay?> rowCells;
+                        while((rowCells = CalendarCells.Skip(row).Take(rowItems)).Any())
+                        {
+                            var cellNumber = 0;
+                            <tr>
+                                @foreach (var cell in rowCells)
+                                {
+                                    <td class="text-center align-middle @GetTodayHighlighterCss(cell)" style="width: @colWidth%">
+                                        @if(cell is not null)
+                                        {
+                                            <div class="d-grid gap-2 d-md-block">
+                                                <button class="@DayButtonsCss @GetHolidayTextCss(cell, cellNumber)"
+                                                    type="button" @onclick="@(_ => OnDayClicked(cell))">
+                                                    @cell.Day.ToPersianNumbers()
+                                                </button>
+                                            </div>
+
+                                            if(cell.Holidays is not null && ShowHolidays)
+                                            {
+                                                foreach(var holiday in cell.Holidays)
+                                                {
+                                                    <div class="@HolidayCss text-wrap text-start mt-1">
+                                                        @holiday.ToPersianNumbers()
+                                                    </div>
+                                                }
+                                            }
+
+                                            foreach(var item in GetDayEvents(cell))
+                                            {
+                                                var rangeText = GetTimeRangeText(item);
+                                                <div class="text-start mt-1">
+                                                    <button class="btn @item.CssClass text-wrap text-start"
+                                                        type="button" @onclick="@(_ => item.Clicked?.Invoke(cell, item))">
+                                                        @if(!string.IsNullOrWhiteSpace(rangeText))
+                                                        {
+                                                            <span class="@item.StartTimeCssClass m-1 lh-lg">
+                                                                @rangeText
+                                                            </span>
+                                                        }
+                                                        @item.Description.ToPersianNumbers()
+                                                    </button>
+                                                </div>
+                                            }
+                                        }
+                                    </td>
+                                    cellNumber++;
+                                }
+                            </tr>
+                            row += rowItems;
+                        }
+                    }
+            </tbody>
+            @if(ShowTodayButton)
+            {
+                <tfoot>
+                    <tr>
+                        <td class="text-center align-middle @TodayHighlightCss" colspan="7">
+                            <button class="@TodayButtonCss" type="button" @onclick="@ShowTodayAsync">
+                                امروز @DateTime.Now.ToPersianDateTextify()
+                            </button>
+                        </td>
+                    </tr>
+                </tfoot>
+            }
+        </table>
+    </div>
+</div>

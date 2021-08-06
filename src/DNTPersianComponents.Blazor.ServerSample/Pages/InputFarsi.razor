@@ -1,0 +1,24 @@
+﻿@page "/input-farsi"
+
+<h3>ورودی تمام فارسی برای مواقعی که صفحه کلید فارسی در دسترس نیست</h3>
+<hr/>
+
+<EditForm class="container" Model="Model" OnValidSubmit="DoRegister">
+	<DataAnnotationsValidator />
+
+    <DntInputFarsi
+                @bind-Value="Model.Description"
+                LabelName="شرح"
+                FieldIcon="bi-person"
+                ConvertEnglishNumbers="true"
+                />
+
+    <DntInputTextAreaFarsi
+                @bind-Value="Model.Text"
+                LabelName="توضیح"
+                FieldIcon="bi-person"
+                ConvertEnglishNumbers="true"
+                />
+
+	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+</EditForm>

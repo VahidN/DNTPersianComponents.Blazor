@@ -1,0 +1,19 @@
+﻿@page "/number-input"
+
+<h3>ورودی عددی با امکان دریافت و یا نمایش اعداد فارسی</h3>
+<hr/>
+
+<EditForm class="container" Model="Model" OnValidSubmit="DoSave">
+	<DataAnnotationsValidator />
+
+    <DntInputText @bind-Value="Model.Name"
+                LabelName="نام محصول"
+                FieldIcon="bi-cart"/>
+
+    <DntInputNumber @bind-Value="Model.Price"
+                LabelName="قیمت"
+				FieldIcon="bi-currency-exchange"
+                UsePersianNumbers="true" />
+
+	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+</EditForm>

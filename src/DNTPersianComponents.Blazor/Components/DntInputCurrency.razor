@@ -1,0 +1,34 @@
+@namespace DNTPersianComponents.Blazor
+@typeparam T
+@inherits InputNumber<T>
+
+<div class="row mb-@InputRowMarginBottom">
+    <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    <div class="col-lg-@InputTextColumnWidth">
+        <div class="input-group">
+            @if(!string.IsNullOrWhiteSpace(FieldIcon))
+            {
+                <div class="input-group-text">
+                    <span class="@FieldIcon" role="img" aria-label="@LabelName"></span>
+                </div>
+            }
+            <input
+                @attributes="@AdditionalAttributes"
+                type="text" dir="ltr"
+                name="@ValueField.FieldName" id="@ValueField.FieldName"
+                autocapitalize="off" autocorrect="off" autocomplete="off"
+                class="@CssClass form-control"
+                value="@CurrentValueAsString"
+                @oninput="OnInputAsync"
+				@ref="ReferenceToInputControl"
+                />
+        </div>
+		@if(ShowNumberToText)
+		{
+			<div class="mt-1" dir="@NumberToTextDirection">
+				@HumanReadableInteger
+			</div>
+		}
+        <ValidationMessage For="@ValueExpression" />
+    </div>
+</div>

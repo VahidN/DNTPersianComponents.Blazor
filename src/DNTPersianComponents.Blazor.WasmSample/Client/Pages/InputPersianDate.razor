@@ -1,0 +1,63 @@
+﻿@page "/input-persian-date"
+
+<h3>ورودی تاریخ شمسی به همراه امکان انتخاب آن از یک تقویم شمسی</h3>
+<hr/>
+
+<EditForm class="container" Model="Model" OnValidSubmit="DoSave">
+	<DataAnnotationsValidator />
+
+    <DntInputText @bind-Value="Model.Name"
+                LabelName="نام کاربری"
+                FieldIcon="bi-person-circle" />
+
+    <DntInputPersianDate
+                @bind-Value="Model.BirthDayGregorian"
+                LabelName="تاریخ تولد"
+                FieldIcon="bi-calendar"
+                ShowCalendarOnFocus="true"
+                BeginningOfCentury="1400"
+                CalendarFromYear="1350"
+                CalendarToYear="1450"
+                UsePersianNumbers="true"
+                CalendarShowHolidays="true"
+                CalendarShowTodayButton="true"
+                CalendarUseShortPersianDayNamesOfWeek="false" />
+
+    <DntInputPersianDate @bind-Value="Model.LoginAt"
+                LabelName="تاریخ ورود"
+                FieldIcon="bi-calendar"
+                BeginningOfCentury="1400"
+                CalendarFromYear="1350"
+                CalendarToYear="1450"
+                UsePersianNumbers="true"
+                CalendarShowHolidays="true"
+                CalendarShowTodayButton="true"
+                CalendarUseShortPersianDayNamesOfWeek="false"
+                CalendarShowYearMonthDropdowns="true" />
+
+    <DntInputPersianDate @bind-Value="Model.LogoutAt"
+                LabelName="تاریخ خروج"
+                FieldIcon="bi-calendar"
+                BeginningOfCentury="1400"
+                CalendarFromYear="1350"
+                CalendarToYear="1450"
+                UsePersianNumbers="true"
+                CalendarShowHolidays="true"
+                CalendarShowTodayButton="true"
+                CalendarUseShortPersianDayNamesOfWeek="false"
+                CalendarShowYearMonthDropdowns="true" />
+
+    <DntInputPersianDate @bind-Value="Model.RegisterAt"
+                LabelName="تاریخ ثبت نام"
+                FieldIcon="bi-calendar"
+                BeginningOfCentury="1400"
+                CalendarFromYear="1350"
+                CalendarToYear="1450"
+                UsePersianNumbers="true"
+                CalendarShowHolidays="true"
+                CalendarShowTodayButton="true"
+                CalendarUseShortPersianDayNamesOfWeek="false"
+                CalendarShowYearMonthDropdowns="true" />
+
+	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+</EditForm>

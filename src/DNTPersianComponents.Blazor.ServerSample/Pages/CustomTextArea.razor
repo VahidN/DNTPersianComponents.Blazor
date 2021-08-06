@@ -1,0 +1,19 @@
+﻿@page "/text-area"
+
+<h3>ورودی متنی با امکان تشخیص جهت راست به چپ و یا چپ به راست ورودی</h3>
+<hr/>
+
+<EditForm class="container" Model="Model" OnValidSubmit="DoRegister">
+	<DataAnnotationsValidator />
+
+    <DntInputText @bind-Value="Model.UserName"
+                LabelName="نام کاربری"
+                FieldIcon="bi-person-circle"
+                AutoCompleteType = "AutoCompleteType.UserName"/>
+
+    <DntInputTextArea @bind-Value="Model.Description"
+                FieldIcon="bi-textarea"
+                LabelName="توضیحات" />
+
+	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+</EditForm>

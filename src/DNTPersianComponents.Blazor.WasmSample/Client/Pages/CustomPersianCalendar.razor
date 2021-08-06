@@ -1,0 +1,19 @@
+﻿@page "/persian-calendar"
+
+<h3>تقویم شمسی به همراه امکان نمایش مناسبت‌های رسمی و وقایع و مناسبت‌های سفارشی</h3>
+<hr/>
+
+<DntPersianCalendar
+            ShowYearMonthDropdowns="true"
+            ShowTodayButton="true"
+            ShowHolidays="true"
+            UseShortPersianDayNamesOfWeek="false"
+            SelectedYear="1400"
+            SelectedMonth="4"
+            FromYear="1370"
+            ToYear="1410"
+            DayClicked="@OnDayClicked"
+            SelectedMonthChanged="@OnSelectedMonthChanged"
+            SelectedYearChanged="@OnSelectedYearChanged"
+            PerpareEventsList="@OnPerpareEventsAsync"
+            />

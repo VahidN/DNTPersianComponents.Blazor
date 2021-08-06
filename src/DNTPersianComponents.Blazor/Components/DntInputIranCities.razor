@@ -1,0 +1,102 @@
+@namespace DNTPersianComponents.Blazor
+
+<div class="row mb-@InputRowMarginBottom">
+    <label class="col-form-label col-lg-@LabelColumnWidth" for="@SelectedProvinceField.FieldName">@LabelName</label>
+    <div class="col-lg-@InputTextColumnWidth">
+        <div class="row">
+            <div class="col-lg-3 mb-@InputRowMarginBottom">
+                @if(Provinces.Any())
+                {
+                    <label class="mb-1" for="@SelectedProvinceField.FieldName">استان</label>
+                    <div>
+                        <InputSelect class="form-select"
+                                    Name="@SelectedProvinceField.FieldName"
+                                    @bind-Value="@SelectedProvince"
+                                    @attributes="@AdditionalAttributes">
+                               <option value="" selected disabled="disabled"></option>
+                               @foreach (var province in Provinces)
+                               {
+                                   <option value="@province">@province</option>
+                               }
+                        </InputSelect>
+                    </div>
+                    @if(SelectedProvinceExpression is not null)
+                    {
+                        <ValidationMessage For="@SelectedProvinceExpression" />
+                    }
+                }
+            </div>
+            <div class="col-lg-3 mb-@InputRowMarginBottom">
+                @if(Counties.Any())
+                {
+                    <label class="mb-1" for="@SelectedCountyField.FieldName">شهرستان</label>
+                    <div>
+                        <InputSelect class="form-select"
+                                    @bind-Value="@SelectedCounty"
+                                    Name="@SelectedCountyField.FieldName"
+                                    @attributes="@AdditionalAttributes">
+                               <option value="" selected disabled="disabled"></option>
+                               @foreach (var county in Counties)
+                               {
+                                   <option value="@county">@county</option>
+                               }
+                        </InputSelect>
+                    </div>
+                    @if(SelectedCountyExpression is not null)
+                    {
+                        <ValidationMessage For="@SelectedCountyExpression" />
+                    }
+                }
+            </div>
+            <div class="col-lg-3 mb-@InputRowMarginBottom">
+                @if(Districts.Any())
+                {
+                    <label class="mb-1" for="@SelectedDistrictField.FieldName">بخش</label>
+                    <div>
+                        <InputSelect class="form-select"
+                                    @bind-Value="@SelectedDistrict"
+                                    Name="@SelectedDistrictField.FieldName"
+                                    @attributes="@AdditionalAttributes">
+                               <option value="" selected disabled="disabled"></option>
+                               @foreach (var district in Districts)
+                               {
+                                   <option value="@district">@district</option>
+                               }
+                        </InputSelect>
+                    </div>
+                    @if(SelectedDistrictExpression is not null)
+                    {
+                        <ValidationMessage For="@SelectedDistrictExpression" />
+                    }
+                }
+            </div>
+            <div class="col-lg-3 mb-@InputRowMarginBottom">
+                @if(Cities.Any())
+                {
+                    <label class="mb-1" for="@SelectedCityField.FieldName">دهستان</label>
+                    <div>
+                        <InputSelect class="form-select"
+                                @bind-Value="@SelectedCity"
+                                Name="@SelectedCityField.FieldName"
+                                @attributes="@AdditionalAttributes">
+                               <option value="" selected disabled="disabled"></option>
+                               @foreach (var item in Cities)
+                               {
+                                   <option value="@item.CityName">@item.CityName</option>
+                               }
+                        </InputSelect>
+                    </div>
+                    @if(SelectedCityExpression is not null)
+                    {
+                        <ValidationMessage For="@SelectedCityExpression" />
+                    }
+
+                    @if(CityDivisionCodeExpression is not null)
+                    {
+                        <ValidationMessage For="@CityDivisionCodeExpression" />
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

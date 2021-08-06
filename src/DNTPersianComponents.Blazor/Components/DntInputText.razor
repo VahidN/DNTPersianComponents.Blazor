@@ -1,0 +1,26 @@
+﻿@namespace DNTPersianComponents.Blazor
+@inherits InputText
+
+<div class="row mb-@InputRowMarginBottom">
+    <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    <div class="col-lg-@InputTextColumnWidth">
+        <div class="input-group">
+            @if(!string.IsNullOrWhiteSpace(FieldIcon))
+            {
+                <div class="input-group-text">
+                    <span class="@FieldIcon" role="img" aria-label="@LabelName"></span>
+                </div>
+            }
+            <input
+                @attributes="@AdditionalAttributes"
+                type="@InputType" dir="@Direction"
+                name="@ValueField.FieldName" id="@ValueField.FieldName"
+                autocapitalize="off" autocorrect="off" autocomplete="@AutoComplete"
+                class="@CssClass form-control"
+                value="@CurrentValueAsString"
+                @oninput="OnInput"
+                />
+        </div>
+        <ValidationMessage For="@ValueExpression" />
+    </div>
+</div>

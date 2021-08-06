@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.8" PrivateAssets="all" />
+    <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\DNTPersianComponents.Blazor.WasmSample.Shared.csproj" />
+    <ProjectReference Include="..\..\DNTPersianComponents.Blazor\DNTPersianComponents.Blazor.csproj" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureLibManEnv" BeforeTargets="BeforeBuild" Condition=" '$(Configuration)' == 'Debug' ">
+    <!-- Ensure libman is installed -->
+    <Exec Command="libman --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="libman is required to build and run this project. To continue, please run `dotnet tool install -g Microsoft.Web.LibraryManager.Cli`, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'libman'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="libman restore" />
+  </Target>
+</Project>

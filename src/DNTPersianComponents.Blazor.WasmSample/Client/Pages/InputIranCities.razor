@@ -1,0 +1,23 @@
+﻿@page "/input-iran-cities"
+
+<h3>ورودی انتخاب نام استان‌ها و شهرستان‌های ایران</h3>
+<hr/>
+
+<EditForm class="container" Model="Model" OnValidSubmit="DoRegister">
+	<DataAnnotationsValidator />
+
+    <DntInputText @bind-Value="Model.UserName"
+                LabelName="نام کاربری"
+                FieldIcon="bi-person-circle"
+                AutoCompleteType = "AutoCompleteType.UserName"/>
+
+    <DntInputIranCities
+                @bind-SelectedProvince="Model.ProvinceName"
+                @bind-SelectedCounty="Model.CountyName"
+                @bind-SelectedDistrict="Model.DistrictName"
+                @bind-SelectedCity="Model.CityName"
+                @bind-CityDivisionCode="Model.CityDivisionCode"
+                LabelName="محل اقامت" />
+
+	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+</EditForm>

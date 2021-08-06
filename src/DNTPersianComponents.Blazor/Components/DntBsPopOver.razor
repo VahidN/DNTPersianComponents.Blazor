@@ -1,0 +1,17 @@
+@namespace DNTPersianComponents.Blazor
+
+@if(IsVisible)
+{
+    <div class="popover shadow-sm rounded-2" @attributes="@AdditionalAttributes" role="tooltip"
+        style="top:@PopOverTop; left:@PopOverLeft; max-width: 100% !important; overflow: hidden; z-index: @ZIndex;">
+        <div class="popover-header d-flex justify-content-between">
+            <h5 class="mt-1">@HeaderLabel</h5>
+            <button type="button" class="btn-close align-self-center"
+                    title="@CloseTitle" aria-label="@CloseTitle" @onclick="@ClosePopOver"></button>
+            @PopOverHeader
+        </div>
+        <div class="popover-body">
+            @PopOverBody
+        </div>
+    </div>
+}

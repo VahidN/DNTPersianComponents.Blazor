@@ -1,0 +1,26 @@
+@namespace DNTPersianComponents.Blazor
+@inherits InputTextArea
+
+<div class="row mb-@InputRowMarginBottom">
+    <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    <div class="col-lg-@InputTextColumnWidth">
+        <div class="input-group">
+            @if(!string.IsNullOrWhiteSpace(FieldIcon))
+            {
+                <div class="input-group-text">
+                    <span class="@FieldIcon" role="img" aria-label="@LabelName"></span>
+                </div>
+            }
+            <textarea
+                @attributes="@AdditionalAttributes"
+                name="@ValueField.FieldName" id="@ValueField.FieldName"
+                autocapitalize="off" autocorrect="off" autocomplete="off"
+                class="@CssClass form-control" dir="@Direction"
+                value="@CurrentValueAsString"
+                @oninput="OnInput"
+                onkeyup="this.style.height = 'auto'; this.style.height = this.scrollHeight +'px'; this.style['overflow-y']='hidden';"
+                />
+        </div>
+        <ValidationMessage For="@ValueExpression" />
+    </div>
+</div>

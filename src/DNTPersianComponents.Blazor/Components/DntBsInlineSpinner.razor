@@ -1,0 +1,12 @@
+@namespace DNTPersianComponents.Blazor
+
+@if (IsVisible)
+{
+    <div class="d-flex">
+        <div class="d-flex justify-content-center align-self-center">
+            <div class="spinner-border @CurrentColor ms-@Margin" style="width: @(Width)rem; height: @(Height)rem;" role="status">
+                <span class="visually-hidden">@LoadingText</span>
+            </div>
+        </div>
+    </div>
+}
