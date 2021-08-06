@@ -106,7 +106,6 @@ namespace DNTPersianComponents.Blazor
 
         internal async Task OnInputAsync(ChangeEventArgs e)
         {
-            //TODO: everywhere we have CurrentValueAsString => set caret pos??
             var caretPosition = await JSRuntime.GetCaretPositionAsync(ReferenceToInputControl);
 
             var value = e.Value as string;

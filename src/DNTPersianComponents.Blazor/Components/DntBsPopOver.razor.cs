@@ -82,7 +82,7 @@ namespace DNTPersianComponents.Blazor
 
         internal void ClosePopOver()
         {
-            IsVisible = false; //TODO: add animation ?
+            IsVisible = false;
         }
     }
 }

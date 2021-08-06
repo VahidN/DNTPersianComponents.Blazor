@@ -11,9 +11,9 @@ namespace DNTPersianComponents.Blazor
     /// <summary>
     /// A custom InputIranCities component
     /// </summary>
-    public partial class DntInputIranCities : ComponentBase //TODO: too slow to load!
+    public partial class DntInputIranCities : ComponentBase
     {
-        private string? _selectedProvince; //TODO: use `enum IranProvince` here instead of an `string`
+        private string? _selectedProvince;
         private string? _selectedCounty;
         private string? _selectedDistrict;
         private string? _selectedCity;
@@ -252,7 +252,7 @@ namespace DNTPersianComponents.Blazor
 
         private void NotifyCityDivisionCodeChanged(int? city)
         {
-            if (CityDivisionCodeChanged.HasDelegate) //TODO: check for edit mode
+            if (CityDivisionCodeChanged.HasDelegate)
             {
                 _ = CityDivisionCodeChanged.InvokeAsync(city);
             }

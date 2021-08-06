@@ -100,7 +100,5 @@ namespace DNTPersianComponents.Blazor
         {
             IsShiftPressed = args.ShiftKey && string.Equals(args.Type, "keydown", StringComparison.Ordinal);
         }
-
-        //TODO: cities are slow. make it async.
     }
 }

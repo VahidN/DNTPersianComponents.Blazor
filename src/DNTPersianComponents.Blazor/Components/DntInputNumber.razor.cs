@@ -71,14 +71,14 @@ namespace DNTPersianComponents.Blazor
             if (firstRender)
             {
                 EnteredValue = CurrentValueAsString;
-                ValueField.NotifyFieldChanged(EditContext); //TODO: add it everywhere for activating validation on edit forms
+                ValueField.NotifyFieldChanged(EditContext);
             }
         }
 
         private void SetCurrentValue(string? value)
         {
-            EnteredValue = value; //TODO: set caret pos??
-            CurrentValueAsString = value.ToEnglishNumbers(); //TODO: add enter a number from popover like banks for security
+            EnteredValue = value;
+            CurrentValueAsString = value.ToEnglishNumbers();
         }
     }
 }

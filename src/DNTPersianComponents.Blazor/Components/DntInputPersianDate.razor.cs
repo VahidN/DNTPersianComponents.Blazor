@@ -296,7 +296,5 @@ namespace DNTPersianComponents.Blazor
                 throw new InvalidOperationException($"The `Value` type is not a supported `date` type. DateTime, DateTime?, DateTimeOffset and DateTimeOffset? are supported.");
             }
         }
-
-        //TODO: check all of the controls for editing mode
     }
 }

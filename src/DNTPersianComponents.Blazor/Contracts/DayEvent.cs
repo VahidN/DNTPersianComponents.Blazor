@@ -11,7 +11,7 @@ namespace DNTPersianComponents.Blazor
         /// <summary>
         /// The description of the event
         /// </summary>
-        public string Description { set; get; } = default!;//TODO: how to get a render fragment
+        public string Description { set; get; } = default!;
 
         /// <summary>
         /// The description's CSS class. Its default value is `badge bg-info`.
