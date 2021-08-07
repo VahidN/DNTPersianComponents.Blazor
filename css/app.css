@@ -5,31 +5,31 @@ html, body {
 
 @font-face {
   font-family: Samim;
-  src: url('/lib/samim-font/Samim.eot?v=4.0.5');
-  src: url('/lib/samim-font/Samim.eot??v=4.0.5#iefix') format('embedded-opentype'),
-       url('/lib/samim-font/Samim.woff2?v=4.0.5') format('woff2'),
-       url('/lib/samim-font/Samim.woff?v=4.0.5') format('woff'),
-       url('/lib/samim-font/Samim.ttf?v=4.0.5') format('truetype');
+  src: url('../lib/samim-font/Samim.eot?v=4.0.5');
+  src: url('../lib/samim-font/Samim.eot??v=4.0.5#iefix') format('embedded-opentype'),
+       url('../lib/samim-font/Samim.woff2?v=4.0.5') format('woff2'),
+       url('../lib/samim-font/Samim.woff?v=4.0.5') format('woff'),
+       url('../lib/samim-font/Samim.ttf?v=4.0.5') format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: Samim;
-  src: url('/lib/samim-font/Samim-Bold.eot?v=4.0.5');
-  src: url('/lib/samim-font/Samim-Bold.eot??v=4.0.5#iefix') format('embedded-opentype'),
-       url('/lib/samim-font/Samim-Bold.woff2?v=4.0.5') format('woff2'),
-       url('/lib/samim-font/Samim-Bold.woff?v=4.0.5') format('woff'),
-       url('/lib/samim-font/Samim-Bold.ttf?v=4.0.5') format('truetype');
+  src: url('../lib/samim-font/Samim-Bold.eot?v=4.0.5');
+  src: url('../lib/samim-font/Samim-Bold.eot??v=4.0.5#iefix') format('embedded-opentype'),
+       url('../lib/samim-font/Samim-Bold.woff2?v=4.0.5') format('woff2'),
+       url('../lib/samim-font/Samim-Bold.woff?v=4.0.5') format('woff'),
+       url('../lib/samim-font/Samim-Bold.ttf?v=4.0.5') format('truetype');
   font-weight: bold;
 }
 
 @font-face {
   font-family: Samim;
-  src: url('/lib/samim-font/Samim-Medium.eot?v=4.0.5');
-  src: url('/lib/samim-font/Samim-Medium.eot??v=4.0.5#iefix') format('embedded-opentype'),
-       url('/lib/samim-font/Samim-Medium.woff2?v=4.0.5') format('woff2'),
-       url('/lib/samim-font/Samim-Medium.woff?v=4.0.5') format('woff'),
-       url('/lib/samim-font/Samim-Medium.ttf?v=4.0.5') format('truetype');
+  src: url('../lib/samim-font/Samim-Medium.eot?v=4.0.5');
+  src: url('../lib/samim-font/Samim-Medium.eot??v=4.0.5#iefix') format('embedded-opentype'),
+       url('../lib/samim-font/Samim-Medium.woff2?v=4.0.5') format('woff2'),
+       url('../lib/samim-font/Samim-Medium.woff?v=4.0.5') format('woff'),
+       url('../lib/samim-font/Samim-Medium.ttf?v=4.0.5') format('truetype');
   font-weight: 500;
 }
 
