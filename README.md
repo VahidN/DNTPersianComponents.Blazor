@@ -18,10 +18,14 @@
 
 [![Nuget](https://img.shields.io/nuget/v/DNTPersianComponents.Blazor)](https://github.com/VahidN/DNTPersianComponents.Blazor)
 
+<div dir="ltr">
+  
 ```powershell
 PM> Install-Package DNTPersianComponents.Blazor
 ```
-
+  
+</div>
+  
 [مشاهده‌ی صفحه‌ی این بسته در سایت نیوگت](http://www.nuget.org/packages/DNTPersianComponents.Blazor/)
 
 ## پیشنیازها
@@ -30,6 +34,8 @@ PM> Install-Package DNTPersianComponents.Blazor
 
 الف) نصب بوت استرپ، آیکن‌های آن و نصب یک فونت اختیاری
 
+<div dir="ltr">
+
 ```powershell
 dotnet tool update -g Microsoft.Web.LibraryManager.Cli
 libman install bootstrap --provider unpkg --destination wwwroot/lib/bootstrap
@@ -37,18 +43,24 @@ libman install bootstrap-icons --provider unpkg --destination wwwroot/lib/bootst
 libman install samim-font --provider unpkg --destination wwwroot/lib/samim-font
 ```
 
+</div>
+
 ب) اصلاح فایل [app.css](src/DNTPersianComponents.Blazor.WasmSample/Client/wwwroot/css/app.css) جهت معرفی فونت‌ها
 
 ج) اصلاح فایل آغازین برنامه مانند [index.html](src/DNTPersianComponents.Blazor.WasmSample/Client/wwwroot/index.html) جهت راست به چپ کردن آن و همچنین استفاده از فایل‌های CSS دریافتی
 
 د) فضاهای نام زیر را به فایل Imports.razor اضافه کنید:
 
+<div dir="ltr">
+  
 ```C#
 @using DNTPersianComponents.Blazor
 @using DNTPersianUtils.Core
 @using DNTPersianUtils.Core.IranCities
 ```
 
+</div>  
+  
 ## کامپوننت‌های مهیا
 
 - [DntInputPersianDate](src/DNTPersianComponents.Blazor.WasmSample/Client/Pages/InputPersianDate.razor): ورودی تاریخ شمسی به همراه امکان انتخاب آن از یک تقویم شمسی
