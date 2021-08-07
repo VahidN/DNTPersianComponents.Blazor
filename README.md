@@ -41,6 +41,14 @@ libman install samim-font --provider unpkg --destination wwwroot/lib/samim-font
 
 ج) اصلاح فایل آغازین برنامه مانند [index.html](src/DNTPersianComponents.Blazor.WasmSample/Client/wwwroot/index.html) جهت راست به چپ کردن آن و همچنین استفاده از فایل‌های CSS دریافتی
 
+د) فضاهای نام زیر را به فایل Imports.razor اضافه کنید:
+
+```C#
+@using DNTPersianComponents.Blazor
+@using DNTPersianUtils.Core
+@using DNTPersianUtils.Core.IranCities
+```
+
 ## کامپوننت‌های مهیا
 
 - [DntInputPersianDate](src/DNTPersianComponents.Blazor.WasmSample/Client/Pages/InputPersianDate.razor): ورودی تاریخ شمسی به همراه امکان انتخاب آن از یک تقویم شمسی
