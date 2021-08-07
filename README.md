@@ -58,3 +58,7 @@ libman install samim-font --provider unpkg --destination wwwroot/lib/samim-font
 
 - [مثال Blazor WASM](src/DNTPersianComponents.Blazor.WasmSample/)
 - [مثال Blazor Server](src/DNTPersianComponents.Blazor.ServerSample/)
+
+## دمو
+
+[مشاهده‌ی دموی مثال‌های فوق](https://vahidn.github.io/DNTPersianComponents.Blazor)
