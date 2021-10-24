@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net5.0;</TargetFrameworks>
     <Description>DNT Persian Blazor's shared components library.</Description>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>1.1.0</VersionPrefix>
     <Authors>Vahid Nasiri</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>DNTPersianComponents.Blazor</AssemblyName>
@@ -39,13 +39,14 @@
     <Deterministic>true</Deterministic>
     <Features>strict</Features>
     <ReportAnalyzer>true</ReportAnalyzer>
+    <NoWarn>NU5118;NU5104;</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.667">
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.673">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.10.56">
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.0.63">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -57,7 +58,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.26.0.34506">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.30.0.37606">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -69,9 +70,16 @@
 
   <ItemGroup Condition="('$(TargetFramework)' == 'net5.0')">
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[5.0.0,)" />        
-    <PackageReference Include="DNTPersianUtils.Core" Version="[5.3.0,)" />
+    <PackageReference Include="DNTPersianUtils.Core" Version="[5.3.1,)" />
   </ItemGroup>
   <PropertyGroup Condition="('$(TargetFramework)' == 'net5.0')">
     <DefineConstants>NET5_0</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="('$(TargetFramework)' == 'net6.0')">
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0-rc.2.21480.10,)" />
+    <PackageReference Include="DNTPersianUtils.Core" Version="[5.3.1,)" />
+  </ItemGroup>
+  <PropertyGroup Condition="('$(TargetFramework)' == 'net6.0')">
+    <DefineConstants>NET6_0</DefineConstants>
   </PropertyGroup>
 </Project>
