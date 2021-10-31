@@ -15,5 +15,14 @@ namespace DNTPersianComponents.Blazor.WasmSample.Client.Pages
             await Task.Delay(2000);
             Console.WriteLine(JsonSerializer.Serialize(Model));
         }
+
+        protected override void OnInitialized()
+        {
+            Model = new RegisterViewModel
+            {
+                UserName = "وحيد",
+                Description = "توضيحات"
+            };
+        }
     }
 }

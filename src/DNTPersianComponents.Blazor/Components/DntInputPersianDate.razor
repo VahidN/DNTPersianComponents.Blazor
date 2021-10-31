@@ -24,7 +24,7 @@
                 @onfocus="OnFocus"
                 />
             <button class="btn btn-outline-secondary"
-                    title="@ShowCalendarLabel" type="button" @onclick="@ShowCalendar">
+                    title="@ShowCalendarLabel" type="button" @onclick="ShowCalendar">
                 <span class="@ShowCalendarIcon" role="img" style="cursor: pointer" aria-label="@ShowCalendarLabel"></span>
             </button>
             <DntBsPopOver
@@ -37,7 +37,7 @@
                     <DntPersianCalendar
                             FromYear="@CalendarFromYear"
                             ToYear="@CalendarToYear"
-                            DayClicked="@OnCalendarDayClicked"
+                            DayClicked="OnCalendarDayClicked"
                             SelectedYear="@CalendarSelectedYear"
                             SelectedMonth="@CalendarSelectedMonth"
                             UseShortPersianDayNamesOfWeek="@CalendarUseShortPersianDayNamesOfWeek"

@@ -50,5 +50,19 @@ namespace DNTPersianComponents.Blazor
             CurrentValueAsString = value;
             Direction = value.ContainsFarsi() ? "rtl" : "ltr";
         }
+
+        /// <summary>
+        /// Method invoked after each time the component has been rendered.
+        /// </summary>
+        /// <param name="firstRender">Set to true if this is the first time</param>
+        protected override void OnAfterRender(bool firstRender)
+        {
+            base.OnAfterRender(firstRender);
+            if (firstRender)
+            {
+                Direction = CurrentValueAsString.ContainsFarsi() ? "rtl" : "ltr";
+                ValueField.NotifyFieldChanged(EditContext);
+            }
+        }
     }
 }

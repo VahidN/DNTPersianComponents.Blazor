@@ -85,6 +85,7 @@ namespace DNTPersianComponents.Blazor
             if (firstRender)
             {
                 await JSRuntime.AddCaretPositionScriptsAsync();
+                ValueField.NotifyFieldChanged(EditContext);
             }
         }
 

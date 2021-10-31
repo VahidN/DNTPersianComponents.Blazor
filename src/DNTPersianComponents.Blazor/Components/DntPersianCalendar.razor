@@ -6,19 +6,19 @@
     <div class="row mb-@MarginBottom">
         <div class="col-lg-5 col-md-12 mb-@MarginBottom">
             <div class="input-group">
-                <button class="@NextPreviousButtonsCss" title="قبلى" type="button" @onclick="@ShowPreviousMonthAsync">
+                <button class="@NextPreviousButtonsCss" title="قبلى" type="button" @onclick="ShowPreviousMonthAsync">
                     <span class="@ShowPreviousMonthIcon" role="img" aria-label="قبلى"></span>
                 </button>
                 <select class="form-select" id="persianMonth"
                         value="@SelectedMonth"
-                        @onchange="@OnSelectedMonthChangedAsync">
+                        @onchange="OnSelectedMonthChangedAsync">
                        <option selected></option>
                        @foreach(var month in PersianCulture.PersianMonthNames)
                        {
                           <option value="@month.Key" selected="@(SelectedMonth == month.Key)">@month.Value</option>
                        }
                 </select>
-                <button class="@NextPreviousButtonsCss" title="بعدى" type="button" @onclick="@ShowNextMonthAsync">
+                <button class="@NextPreviousButtonsCss" title="بعدى" type="button" @onclick="ShowNextMonthAsync">
                     <span class="@ShowNextMonthIcon" role="img" aria-label="بعدى"></span>
                 </button>
             </div>
@@ -28,19 +28,19 @@
         </div>
         <div class="col-lg-5 col-md-12 mb-@MarginBottom">
             <div class="input-group">
-                <button class="@NextPreviousButtonsCss" title="قبلى" type="button" @onclick="@ShowPreviousYearAsync">
+                <button class="@NextPreviousButtonsCss" title="قبلى" type="button" @onclick="ShowPreviousYearAsync">
                     <span class="@ShowPreviousYearIcon" role="img" aria-label="قبلى"></span>
                 </button>
                 <select class="form-select" id="persianYear"
                         value="@SelectedYear"
-                        @onchange="@OnSelectedYearChangedAsync">
+                        @onchange="OnSelectedYearChangedAsync">
                        <option selected></option>
                        @for(var year = FromYear; year <= ToYear; year++)
                        {
                            <option value="@year" selected="@(SelectedYear == year)">@year.ToPersianNumbers()</option>
                        }
                 </select>
-                <button class="@NextPreviousButtonsCss" title="بعدى" type="button" @onclick="@ShowNextYearAsync">
+                <button class="@NextPreviousButtonsCss" title="بعدى" type="button" @onclick="ShowNextYearAsync">
                     <span class="@ShowNextYearIcon" role="img" aria-label="بعدى"></span>
                 </button>
             </div>
