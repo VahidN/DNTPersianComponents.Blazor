@@ -128,7 +128,6 @@ namespace DNTPersianComponents.Blazor
             {
                 await JSRuntime.AddCaretPositionScriptsAsync();
                 ShowInitialHumanReadableInteger();
-                ValueField.NotifyFieldChanged(EditContext);
             }
         }
 

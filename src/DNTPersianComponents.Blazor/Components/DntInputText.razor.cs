@@ -72,7 +72,6 @@ namespace DNTPersianComponents.Blazor
             if (firstRender)
             {
                 Direction = CurrentValueAsString.ContainsFarsi() ? "rtl" : "ltr";
-                ValueField.NotifyFieldChanged(EditContext);
             }
         }
     }
