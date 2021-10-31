@@ -71,6 +71,7 @@ namespace DNTPersianComponents.Blazor
             if (firstRender)
             {
                 EnteredValue = CurrentValueAsString;
+                ValueField.NotifyFieldChanged(EditContext);
             }
         }
 

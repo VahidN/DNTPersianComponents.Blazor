@@ -15,5 +15,16 @@ namespace DNTPersianComponents.Blazor.ServerSample.Pages
             await Task.Delay(2000);
             Console.WriteLine(JsonSerializer.Serialize(Model));
         }
+
+        protected async override Task OnInitializedAsync()
+        {
+            await Task.Delay(2000);
+
+            Model = new RegisterViewModel
+            {
+                UserName = "آزمايش",
+                Description = "توضيحات"
+            };
+        }
     }
 }

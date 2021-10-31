@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using DNTPersianUtils.Core;
 using Microsoft.AspNetCore.Components;
 
@@ -53,13 +54,14 @@ namespace DNTPersianComponents.Blazor
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
+            SetDirection(CurrentValueAsString);
         }
 
         internal void OnInput(ChangeEventArgs e)
         {
             var value = e.Value as string;
             CurrentValueAsString = value;
-            Direction = value.ContainsFarsi() ? "rtl" : "ltr";
+            SetDirection(value);
         }
 
         /// <summary>
@@ -71,8 +73,13 @@ namespace DNTPersianComponents.Blazor
             base.OnAfterRender(firstRender);
             if (firstRender)
             {
-                Direction = CurrentValueAsString.ContainsFarsi() ? "rtl" : "ltr";
+                SetDirection(CurrentValueAsString);
             }
+        }
+
+        private void SetDirection(string? value)
+        {
+            Direction = value.ContainsFarsi() ? "rtl" : "ltr";
         }
     }
 }
