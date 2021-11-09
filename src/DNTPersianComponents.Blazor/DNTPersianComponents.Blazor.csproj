@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net6.0;net5.0;</TargetFrameworks>
     <Description>DNT Persian Blazor's shared components library.</Description>
-    <VersionPrefix>1.2.0</VersionPrefix>
+    <VersionPrefix>1.2.1</VersionPrefix>
     <Authors>Vahid Nasiri</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>DNTPersianComponents.Blazor</AssemblyName>
@@ -46,7 +46,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.0.63">
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.0.64">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -65,7 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="('$(TargetFramework)' == 'net5.0')">
@@ -76,7 +76,7 @@
     <DefineConstants>NET5_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition="('$(TargetFramework)' == 'net6.0')">
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0-rc.2.21480.10,)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0,)" />
     <PackageReference Include="DNTPersianUtils.Core" Version="[5.3.1,)" />
   </ItemGroup>
   <PropertyGroup Condition="('$(TargetFramework)' == 'net6.0')">
