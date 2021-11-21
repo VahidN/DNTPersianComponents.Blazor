@@ -1,7 +1,10 @@
 @namespace DNTPersianComponents.Blazor
 
 <div class="row mb-@InputRowMarginBottom">
-    <label class="col-form-label col-lg-@LabelColumnWidth" for="@SelectedProvinceField.FieldName">@LabelName</label>
+    @if(!string.IsNullOrWhiteSpace(LabelName))
+    {
+      <label class="col-form-label col-lg-@LabelColumnWidth" for="@SelectedProvinceField.FieldName">@LabelName</label>
+    }
     <div class="col-lg-@InputTextColumnWidth">
         <div class="row">
             <div class="col-lg-3 mb-@InputRowMarginBottom">

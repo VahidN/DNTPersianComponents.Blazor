@@ -244,3 +244,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /.idea
+/src/DNTPersianComponents.Blazor.WasmSample/Server/*.binlog

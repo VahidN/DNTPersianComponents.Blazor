@@ -2,7 +2,10 @@
 @inherits InputText
 
 <div class="row mb-@InputRowMarginBottom">
-    <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    @if(!string.IsNullOrWhiteSpace(LabelName))
+    {
+      <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    }
     <div class="col-lg-@InputTextColumnWidth">
         <div class="input-group">
             @if(!string.IsNullOrWhiteSpace(FieldIcon))
@@ -21,6 +24,9 @@
                 @oninput="OnInput"
                 />
         </div>
-        <ValidationMessage For="@ValueExpression" />
+        @if(ValueExpression is not null)
+        { 
+          <ValidationMessage For="@ValueExpression" />
+	}
     </div>
 </div>

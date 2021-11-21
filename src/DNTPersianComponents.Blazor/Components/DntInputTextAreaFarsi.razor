@@ -2,7 +2,10 @@
 @inherits InputTextArea
 
 <div class="row mb-@InputRowMarginBottom">
-    <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    @if(!string.IsNullOrWhiteSpace(LabelName))
+    {
+      <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+    }
     <div class="col-lg-@InputTextColumnWidth">
         <div class="input-group">
             @if(!string.IsNullOrWhiteSpace(FieldIcon))
@@ -24,6 +27,9 @@
                 onkeyup="this.style.height = 'auto'; this.style.height = this.scrollHeight +'px'; this.style['overflow-y']='hidden';"
                 />
         </div>
-        <ValidationMessage For="@ValueExpression" />
+	@if(ValueExpression is not null)
+        { 
+          <ValidationMessage For="@ValueExpression" />
+	}
     </div>
 </div>
