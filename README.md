@@ -1,8 +1,10 @@
-﻿<div dir="rtl">
-
-## DNTPersianComponents.Blazor ؛ مجموعه کامپوننت‌های فارسی مخصوص Blazor
-
+﻿<div dir="rtl"> 
+  
+## DNTPersianComponents.Blazor
+   مجموعه کامپوننت‌های فارسی مخصوص Blazor 
+  
 </div>
+
 
 <p align="left">
   <a href="https://github.com/VahidN/DNTPersianComponents.Blazor">
