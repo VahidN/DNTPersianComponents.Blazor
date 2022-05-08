@@ -12,6 +12,6 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.102
+        dotnet-version: 6.0.202
     - name: Build DNTCommon.Blazor lib
       run: dotnet build ./src/DNTPersianComponents.Blazor.WasmSample/Server/DNTPersianComponents.Blazor.WasmSample.Server.csproj --configuration Release
