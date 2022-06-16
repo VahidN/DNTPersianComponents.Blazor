@@ -26,10 +26,13 @@
                 @oninput="OnInput"
                 @onfocus="OnFocus"
                 />
-            <button class="btn btn-outline-secondary"
+            @if(ShowCalendarButton)
+            {				
+              <button class="btn btn-outline-secondary"
                     title="@ShowCalendarLabel" type="button" @onclick="ShowCalendar">
                 <span class="@ShowCalendarIcon" role="img" style="cursor: pointer" aria-label="@ShowCalendarLabel"></span>
-            </button>
+              </button>
+            }			
             <DntBsPopOver
                     PopOverTop="@PopOverTop"
                     PopOverLeft="@PopOverLeft"

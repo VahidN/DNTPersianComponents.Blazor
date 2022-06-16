@@ -182,6 +182,11 @@ namespace DNTPersianComponents.Blazor
         [Parameter] public bool ShowCalendarOnFocus { set; get; }
 
         /// <summary>
+        /// Should we show the `display calendar button`? Its default value is `true`.
+        /// </summary>
+        [Parameter] public bool ShowCalendarButton { set; get; } = true;
+
+        /// <summary>
         /// Should we show the entered date with Persian numbers?
         /// </summary>
         [Parameter] public bool UsePersianNumbers { set; get; }
