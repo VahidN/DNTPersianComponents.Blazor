@@ -3,7 +3,7 @@
     <TargetFrameworks>net6.0;net5.0;</TargetFrameworks>
     <BlazorLinkOnBuild Condition="'$(Configuration)'!='Release'">false</BlazorLinkOnBuild>
     <Description>DNT Persian Blazor's shared components library.</Description>
-    <VersionPrefix>1.2.6</VersionPrefix>
+    <VersionPrefix>1.2.7</VersionPrefix>
     <Authors>Vahid Nasiri</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>DNTPersianComponents.Blazor</AssemblyName>
@@ -71,14 +71,14 @@
 
   <ItemGroup Condition="('$(TargetFramework)' == 'net5.0')">
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[5.0.0,)" />
-    <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.4,)" />
+    <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.5,)" />
   </ItemGroup>
   <PropertyGroup Condition="('$(TargetFramework)' == 'net5.0')">
     <DefineConstants>NET5_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup Condition="('$(TargetFramework)' == 'net6.0')">
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0,)" />
-    <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.4,)" />
+    <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.5,)" />
   </ItemGroup>
   <PropertyGroup Condition="('$(TargetFramework)' == 'net6.0')">
     <DefineConstants>NET6_0</DefineConstants>
