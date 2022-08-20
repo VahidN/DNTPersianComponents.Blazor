@@ -1,22 +1,22 @@
-﻿@using DNTPersianUtils.Core
-@page "/currency-input"
+﻿@page "/currency-input"
+@using DNTPersianUtils.Core
 
 <h3>ورودی مبالغ فارسی به همراه جداکننده‌ی سه رقمی هزارها و نمایش عدد به رقم</h3>
 <hr/>
 
 <EditForm class="container" Model="Model" OnValidSubmit="DoSave">
-	<DataAnnotationsValidator />
+    <DataAnnotationsValidator/>
 
     <DntInputText @bind-Value="Model.Name"
-                LabelName="نام محصول"
-                FieldIcon="bi-cart"/>
+                  LabelName="نام محصول"
+                  FieldIcon="bi-cart"/>
 
     <DntInputCurrency @bind-Value="@Model.Price"
-                LabelName="قیمت"
-				FieldIcon="bi-currency-exchange"
-                UsePersianNumbers="true"
-				ShowNumberToText="true"
-				NumberToTextLanguage="@Language.Persian" />
+                      LabelName="قیمت"
+                      FieldIcon="bi-currency-exchange"
+                      UsePersianNumbers="true"
+                      ShowNumberToText="true"
+                      NumberToTextLanguage="@Language.Persian"/>
 
-	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+    <button type="submit" class="btn btn-primary btn-lg">ارسال</button>
 </EditForm>

@@ -27,7 +27,7 @@
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   <PropertyGroup>
-    <LangVersion>9</LangVersion>
+    <LangVersion>Latest</LangVersion>
     <AnalysisLevel>latest</AnalysisLevel>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
@@ -43,11 +43,11 @@
     <NoWarn>NU5118;NU5104;</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.702">
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.713">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.2.32">
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.3.44">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -59,7 +59,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.40.0.48530">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.44.0.52574">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

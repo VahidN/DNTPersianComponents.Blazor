@@ -4,27 +4,26 @@ using System.Threading.Tasks;
 using DNTPersianComponents.Blazor.WasmSample.Client.ViewModels;
 using Microsoft.AspNetCore.Components;
 
-namespace DNTPersianComponents.Blazor.ServerSample.Pages
+namespace DNTPersianComponents.Blazor.ServerSample.Pages;
+
+public partial class CustomTextArea : ComponentBase
 {
-    public partial class CustomTextArea : ComponentBase
+    private RegisterViewModel Model { set; get; } = new();
+
+    private async Task DoRegister()
     {
-        private RegisterViewModel Model { set; get; } = new();
+        await Task.Delay(2000);
+        Console.WriteLine(JsonSerializer.Serialize(Model));
+    }
 
-        private async Task DoRegister()
-        {
-            await Task.Delay(2000);
-            Console.WriteLine(JsonSerializer.Serialize(Model));
-        }
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(2000);
 
-        protected async override Task OnInitializedAsync()
-        {
-            await Task.Delay(2000);
-
-            Model = new RegisterViewModel
-            {
-                UserName = "آزمايش",
-                Description = "توضيحات"
-            };
-        }
+        Model = new RegisterViewModel
+                {
+                    UserName = "آزمايش",
+                    Description = "توضيحات",
+                };
     }
 }

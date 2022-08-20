@@ -1,14 +1,14 @@
-@namespace DNTPersianComponents.Blazor
+@namespace DNTPersianComponents.Blazor 
 @inherits InputText
 
 <div class="row mb-@InputRowMarginBottom">
-    @if(!string.IsNullOrWhiteSpace(LabelName))
+    @if (!string.IsNullOrWhiteSpace(LabelName))
     {
-      <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+        <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
     }
     <div class="col-lg-@InputTextColumnWidth">
         <div class="input-group">
-            @if(!string.IsNullOrWhiteSpace(FieldIcon))
+            @if (!string.IsNullOrWhiteSpace(FieldIcon))
             {
                 <div class="input-group-text">
                     <span class="@FieldIcon" role="img" aria-label="@LabelName"></span>
@@ -23,12 +23,11 @@
                 value="@CurrentValueAsString"
                 @onkeydown="KeyboardEventHandler"
                 @oninput="OnInputAsync"
-                @ref="ReferenceToInputControl"
-                />
+                @ref="ReferenceToInputControl"/>
         </div>
-        @if(ValueExpression is not null)
-        { 
-           <ValidationMessage For="@ValueExpression" />
-	}
+        @if (ValueExpression is not null)
+        {
+            <ValidationMessage For="@ValueExpression"/>
+        }
     </div>
 </div>

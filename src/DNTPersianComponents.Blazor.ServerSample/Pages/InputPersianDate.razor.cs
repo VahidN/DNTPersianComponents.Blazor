@@ -4,16 +4,15 @@ using System.Threading.Tasks;
 using DNTPersianComponents.Blazor.WasmSample.Client.ViewModels;
 using Microsoft.AspNetCore.Components;
 
-namespace DNTPersianComponents.Blazor.ServerSample.Pages
-{
-    public partial class InputPersianDate : ComponentBase
-    {
-        private InputPersianDateViewModel Model { set; get; } = new();
+namespace DNTPersianComponents.Blazor.ServerSample.Pages;
 
-        private async Task DoSave()
-        {
-            await Task.Delay(2000);
-            Console.WriteLine(JsonSerializer.Serialize(Model));
-        }
+public partial class InputPersianDate : ComponentBase
+{
+    private InputPersianDateViewModel Model { get; } = new();
+
+    private async Task DoSave()
+    {
+        await Task.Delay(2000);
+        Console.WriteLine(JsonSerializer.Serialize(Model));
     }
 }

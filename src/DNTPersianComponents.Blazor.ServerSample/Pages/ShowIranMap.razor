@@ -1,133 +1,131 @@
-﻿@using DNTPersianUtils.Core.IranCities
-
-@page "/show-iran-map"
+﻿@page "/show-iran-map"
 
 <h3>نقشه ایران با قابلیت انتخاب استان‌ها و یا تغییر رنگ آن‌ها</h3>
 <hr/>
 
 <div class="row">
-	<div class="col-2">
-		@if(SelectedProvince.HasValue)
-		{
-			<div class="alert alert-info mb-2">
-			   Selected Province: @SelectedProvince.GetDisplayName()
-			</div>
-		}
+    <div class="col-2">
+        @if (SelectedProvince.HasValue)
+        {
+            <div class="alert alert-info mb-2">
+                Selected Province: @SelectedProvince.GetDisplayName()
+            </div>
+        }
 
-		@if(HoveredProvince.HasValue)
-		{
-			<div class="alert alert-warning mb-2">
-			   Hovered Province: @HoveredProvince.GetDisplayName()
-			</div>
-		}
-	</div>
-	<div class="col-10">
-		<DntIranMap
-			@bind-SelectedProvince="@SelectedProvince"
-			@bind-HoveredProvince="@HoveredProvince"
-			IranProvincesStyles="@IranProvincesStyles"
-			ProvinceNamesStyles="@ProvinceNamesStyles"
-			IranProvincesTitles="@IranProvincesTitles">
-			<IranProvincesBody Context="province">
-				@switch(province)
-				{
-					 case IranProvince.AzerbaijanEast:
-					   <div class="alert alert-info">
-						  متن بدنه‌ی سفارشی آذربایجان شرقی
-					   </div>
-					  break;
+        @if (HoveredProvince.HasValue)
+        {
+            <div class="alert alert-warning mb-2">
+                Hovered Province: @HoveredProvince.GetDisplayName()
+            </div>
+        }
+    </div>
+    <div class="col-10">
+        <DntIranMap
+            @bind-SelectedProvince="@SelectedProvince"
+            @bind-HoveredProvince="@HoveredProvince"
+            IranProvincesStyles="@IranProvincesStyles"
+            ProvinceNamesStyles="@ProvinceNamesStyles"
+            IranProvincesTitles="@IranProvincesTitles">
+            <IranProvincesBody Context="province">
+                @switch (province)
+                {
+                    case IranProvince.AzerbaijanEast:
+                        <div class="alert alert-info">
+                            متن بدنه‌ی سفارشی آذربایجان شرقی
+                        </div>
+                        break;
 
-					 case IranProvince.AzerbaijanWest:
-					  break;
+                    case IranProvince.AzerbaijanWest:
+                        break;
 
-					 case IranProvince.Ardabil:
-					  break;
+                    case IranProvince.Ardabil:
+                        break;
 
-					 case IranProvince.Isfahan:
-					  break;
+                    case IranProvince.Isfahan:
+                        break;
 
-					 case IranProvince.Alborz:
-					  break;
+                    case IranProvince.Alborz:
+                        break;
 
-					 case IranProvince.Ilam:
-					  break;
+                    case IranProvince.Ilam:
+                        break;
 
-					 case IranProvince.Bushehr:
-					  break;
+                    case IranProvince.Bushehr:
+                        break;
 
-					 case IranProvince.Tehran:
-					  break;
+                    case IranProvince.Tehran:
+                        break;
 
-					 case IranProvince.ChaharMahaalBakhtiari:
-					  break;
+                    case IranProvince.ChaharMahaalBakhtiari:
+                        break;
 
-					 case IranProvince.KhorasanSouth:
-					  break;
+                    case IranProvince.KhorasanSouth:
+                        break;
 
-					 case IranProvince.KhorasanRazavi:
-					  break;
+                    case IranProvince.KhorasanRazavi:
+                        break;
 
-					 case IranProvince.KhorasanNorth:
-					  break;
+                    case IranProvince.KhorasanNorth:
+                        break;
 
-					 case IranProvince.Khuzestan:
-					  break;
+                    case IranProvince.Khuzestan:
+                        break;
 
-					 case IranProvince.Zanjan:
-					  break;
+                    case IranProvince.Zanjan:
+                        break;
 
-					 case IranProvince.Semnan:
-					  break;
+                    case IranProvince.Semnan:
+                        break;
 
-					 case IranProvince.SistanBaluchestan:
-					  break;
+                    case IranProvince.SistanBaluchestan:
+                        break;
 
-					 case IranProvince.Fars:
-					  break;
+                    case IranProvince.Fars:
+                        break;
 
-					 case IranProvince.Qazvin:
-					  break;
+                    case IranProvince.Qazvin:
+                        break;
 
-					 case IranProvince.Qom:
-					  break;
+                    case IranProvince.Qom:
+                        break;
 
-					 case IranProvince.Kurdistan:
-					  break;
+                    case IranProvince.Kurdistan:
+                        break;
 
-					 case IranProvince.Kerman:
-					  break;
+                    case IranProvince.Kerman:
+                        break;
 
-					 case IranProvince.Kermanshah:
-					  break;
+                    case IranProvince.Kermanshah:
+                        break;
 
-					 case IranProvince.KohgiluyehBoyerAhmad:
-					  break;
+                    case IranProvince.KohgiluyehBoyerAhmad:
+                        break;
 
-					 case IranProvince.Golestan:
-					  break;
+                    case IranProvince.Golestan:
+                        break;
 
-					 case IranProvince.Gilan:
-					  break;
+                    case IranProvince.Gilan:
+                        break;
 
-					 case IranProvince.Lorestan:
-					  break;
+                    case IranProvince.Lorestan:
+                        break;
 
-					 case IranProvince.Mazandaran:
-					  break;
+                    case IranProvince.Mazandaran:
+                        break;
 
-					 case IranProvince.Markazi:
-					  break;
+                    case IranProvince.Markazi:
+                        break;
 
-					 case IranProvince.Hormozgan:
-					  break;
+                    case IranProvince.Hormozgan:
+                        break;
 
-					 case IranProvince.Hamadan:
-					  break;
+                    case IranProvince.Hamadan:
+                        break;
 
-					 case IranProvince.Yazd:
-					  break;
-				}
-			</IranProvincesBody>
-		</DntIranMap>
-	</div>
+                    case IranProvince.Yazd:
+                        break;
+                }
+            </IranProvincesBody>
+        </DntIranMap>
+    </div>
 </div>

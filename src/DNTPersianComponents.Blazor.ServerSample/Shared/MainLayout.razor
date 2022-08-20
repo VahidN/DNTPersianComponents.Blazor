@@ -1,61 +1,61 @@
 @inherits LayoutComponentBase
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">DNTPersianComponents.Blazor</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                خانه
-            </NavLink>
-        </li>
-      </ul>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">DNTPersianComponents.Blazor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        خانه
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-3">
-        <div class="list-group mb-4">
-            <NavLink class="list-group-item list-group-item-action" href="" Match="NavLinkMatch.All">
-                خانه
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="persian-calendar">
-                تقویم شمسی
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="input-persian-date">
-                ورودی تاریخ با انتخاب تقویم شمسی
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="input-farsi">
-                ورودی متنی تمام فارسی
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="text-area">
-                ورودی متنی با تشخیص جهت
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="number-input">
-                ورودی عددی فارسی
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="currency-input">
-                ورودی مبالغ فارسی
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="show-iran-map">
-                نقشه ایران
-            </NavLink>
-            <NavLink class="list-group-item list-group-item-action" href="input-iran-cities">
-                لیست استان‌ها و شهرها
-            </NavLink>
-            <a class="list-group-item list-group-item-action" href="https://github.com/VahidN/DNTPersianComponents.Blazor">
-                بازگشت به Github
-            </a>						
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="list-group mb-4">
+                <NavLink class="list-group-item list-group-item-action" href="" Match="NavLinkMatch.All">
+                    خانه
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="persian-calendar">
+                    تقویم شمسی
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="input-persian-date">
+                    ورودی تاریخ با انتخاب تقویم شمسی
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="input-farsi">
+                    ورودی متنی تمام فارسی
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="text-area">
+                    ورودی متنی با تشخیص جهت
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="number-input">
+                    ورودی عددی فارسی
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="currency-input">
+                    ورودی مبالغ فارسی
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="show-iran-map">
+                    نقشه ایران
+                </NavLink>
+                <NavLink class="list-group-item list-group-item-action" href="input-iran-cities">
+                    لیست استان‌ها و شهرها
+                </NavLink>
+                <a class="list-group-item list-group-item-action" href="https://github.com/VahidN/DNTPersianComponents.Blazor">
+                    بازگشت به Github
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            @Body
         </div>
     </div>
-    <div class="col-lg-9">
-        @Body
-    </div>
-  </div>
 </div>

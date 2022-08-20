@@ -1,8 +1,40 @@
 [*.cs]
 
+# Set severity for all of the Roslynator's analyzers
+# dotnet_analyzer_diagnostic.category-roslynator.severity = warning
+
+# Enable/disable all of the Roslynator's refactorings
+# roslynator_refactorings.enabled = true
+
+# Enable/disable all of the Roslynator's compiler diagnostic fixes
+# roslynator_compiler_diagnostic_fixes.enabled = true
+
+# Add RegexOptions.ExplicitCapture to prevent capturing unneeded groups
+dotnet_diagnostic.MA0023.severity = suggestion
+
+# Change this to be read-only by removing the property setter csharp(CA2227)
+dotnet_diagnostic.CA2227.severity = suggestion
+
 # CA2007: Consider calling ConfigureAwait on the awaited task
 dotnet_diagnostic.CA2007.severity = none
 dotnet_diagnostic.RCS1090.severity = none
+
+dotnet_diagnostic.MA0002.severity = suggestion
+
+#logging
+dotnet_diagnostic.CA1848.severity = suggestion
+
+# CA1716: Rename namespace `Shared` so that it no longer conflicts with the reserved language keyword 'Shared'.
+dotnet_diagnostic.CA1716.severity = suggestion
+
+# S1066: Merge this if statement with the enclosing one. 
+dotnet_diagnostic.S1066.severity = suggestion
+
+# Modify to catch a more specific allowed exception type, or rethrow the exception csharp(CA1031)
+dotnet_diagnostic.CA1031.severity = suggestion
+
+# Private classes or records which are not derived in the current assembly should be marked as 'sealed'.
+dotnet_diagnostic.S3260.severity = suggestion
 
 # CA1010 Type directly or indirectly inherits 'IEnumerable' without implementing 'IEnumerable<T>'. Publicly-visible types should implement the generic version to broaden usability. 
 dotnet_diagnostic.CA1010.severity = suggestion
@@ -62,7 +94,7 @@ dotnet_diagnostic.VSTHRD103.severity = error
 dotnet_diagnostic.AsyncFixer03.severity = error
 
 # VSTHRD100: Avoid async void methods
-dotnet_diagnostic.VSTHRD100.severity = error
+dotnet_diagnostic.VSTHRD100.severity = suggestion
 
 # VSTHRD101: Avoid unsupported async delegates
 dotnet_diagnostic.VSTHRD101.severity = error
@@ -149,3 +181,5 @@ dotnet_diagnostic.HAA0502.severity = none
 # HAA0505: Initializer reference type allocation
 dotnet_diagnostic.HAA0505.severity = silent
 
+# force file scoped namespaces
+csharp_style_namespace_declarations = file_scoped:warning

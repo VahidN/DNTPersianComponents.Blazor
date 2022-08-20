@@ -4,16 +4,15 @@ using System.Threading.Tasks;
 using DNTPersianComponents.Blazor.WasmSample.Client.ViewModels;
 using Microsoft.AspNetCore.Components;
 
-namespace DNTPersianComponents.Blazor.ServerSample.Pages
-{
-    public partial class InputFarsi : ComponentBase
-    {
-        private InputFarsiViewModel Model { set; get; } = new();
+namespace DNTPersianComponents.Blazor.ServerSample.Pages;
 
-        private async Task DoRegister()
-        {
-            await Task.Delay(1000);
-            Console.WriteLine(JsonSerializer.Serialize(Model));
-        }
+public partial class InputFarsi : ComponentBase
+{
+    private InputFarsiViewModel Model { get; } = new();
+
+    private async Task DoRegister()
+    {
+        await Task.Delay(1000);
+        Console.WriteLine(JsonSerializer.Serialize(Model));
     }
 }

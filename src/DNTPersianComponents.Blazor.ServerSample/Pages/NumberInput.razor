@@ -4,16 +4,16 @@
 <hr/>
 
 <EditForm class="container" Model="Model" OnValidSubmit="DoSave">
-	<DataAnnotationsValidator />
+    <DataAnnotationsValidator/>
 
     <DntInputText @bind-Value="Model.Name"
-                LabelName="نام محصول"
-                FieldIcon="bi-cart"/>
+                  LabelName="نام محصول"
+                  FieldIcon="bi-cart"/>
 
     <DntInputNumber @bind-Value="Model.Price"
-                LabelName="قیمت"
-				FieldIcon="bi-currency-exchange"
-                UsePersianNumbers="true" />
+                    LabelName="قیمت"
+                    FieldIcon="bi-currency-exchange"
+                    UsePersianNumbers="true"/>
 
-	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+    <button type="submit" class="btn btn-primary btn-lg">ارسال</button>
 </EditForm>

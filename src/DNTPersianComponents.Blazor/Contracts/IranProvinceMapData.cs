@@ -2,32 +2,32 @@ using System;
 using System.Collections.Generic;
 using DNTPersianUtils.Core.IranCities;
 
-namespace DNTPersianComponents.Blazor
+namespace DNTPersianComponents.Blazor;
+
+/// <summary>
+/// Provides SVG path data of the Iran's provinces
+/// </summary>
+public static class IranProvinceMapData
 {
-    /// <summary>
-    /// Provides SVG path data of the Iran's provinces
-    /// </summary>
-    public static class IranProvinceMapData
-    {
-        /// <summary>
-        /// Provides SVG path data of the Iran's islands
-        /// </summary>
-        public static IList<string> IranIslandsPathData { get; } = new List<string>
-            {
-                @"M267.93,400.45c-0.72,1.15-1.85,1.97-2.82,2.9c-1.46-1.26-3.36-2.65-3.3-4.8c0.04-0.9-0.21-2,0.47-2.72
+	/// <summary>
+	/// Provides SVG path data of the Iran's islands
+	/// </summary>
+	public static IList<string> IranIslandsPathData { get; } = new List<string>
+	                                                           {
+		                                                           @"M267.93,400.45c-0.72,1.15-1.85,1.97-2.82,2.9c-1.46-1.26-3.36-2.65-3.3-4.8c0.04-0.9-0.21-2,0.47-2.72
 				c0.91-0.65,2.09-0.44,3.15-0.54c0.85,0.96,1.68,1.94,2.54,2.9C267.99,398.94,268.08,399.7,267.93,400.45z",
-                @"M520.65,525.72c1.31,0.08,2.75-0.04,4.09-0.27c-0.09,0.43,0.08,0.62,0.03,1.17
+		                                                           @"M520.65,525.72c1.31,0.08,2.75-0.04,4.09-0.27c-0.09,0.43,0.08,0.62,0.03,1.17
 				c-0.68,0.49-2.81,1.5-3.56,1.85c0.44,0.11,2.4,0.99,2.84,1.1c0.27,0.73,0.06,0.74,0.16,1.51c-1.53,0.05-2.58-0.63-3.98-1.14
 				c0.35-0.54,0.52-1.12,0.87-1.65C520.66,527.5,520.43,526.56,520.65,525.72z",
-                @"M331.2,534.68c0.07-1.41,0.01-2.83-0.08-4.23c0.97-0.51,2.04-0.83,3.13-0.79c0.41,2.47,0.16,5.03,0.49,7.52
+		                                                           @"M331.2,534.68c0.07-1.41,0.01-2.83-0.08-4.23c0.97-0.51,2.04-0.83,3.13-0.79c0.41,2.47,0.16,5.03,0.49,7.52
 				L331.2,534.68z"
-            };
+	                                                           };
 
-        /// <summary>
-        /// Provides SVG path data of the Persian Gulf
-        /// </summary>
-        public static string UrmiaLakePathData { get; } =
-                @"M194.99,87.71c1.36-2.6,4.59-0.32,6.58,0.2
+	/// <summary>
+	/// Provides SVG path data of the Persian Gulf
+	/// </summary>
+	public static string UrmiaLakePathData { get; } =
+		@"M194.99,87.71c1.36-2.6,4.59-0.32,6.58,0.2
 				l0.08,0.06c0.04,0.02,0.1,0.06,0.12,0.1l0.06,0.04c0.39,1.64,1.83,2.25,3.23,2.76c0.12,0.3,0.41,0.93,0.53,1.26
 				c0.35,0.18,0.99,0.59,1.34,0.79c0.2,2.42,0.49,4.89-0.24,7.27l-0.81,0.49c-0.51,0.1-1.5,0.26-2.01,0.36
 				c0.18,2.11,0.49,4.24,0.93,6.33c1.6,0.43,2.74,1.6,3.92,2.68c1.46,0.69,3.55,0.45,4.24,2.21c0.81,0.02,1.64,0.04,2.46,0.06
@@ -38,11 +38,11 @@ namespace DNTPersianComponents.Blazor
 				c0.95-0.14,1.52-0.65,1.68-1.52l0.1-0.43c0.16-0.65,0.34-1.3,0.55-1.95c-1.6-0.14-3.19-0.3-4.77-0.51
 				C193.59,91.38,193.89,89.37,194.99,87.71z";
 
-        /// <summary>
-        /// Provides SVG path data of the Persian Gulf
-        /// </summary>
-        public static string PersianGulfPathData { get; } =
-                @"M346.52,545c-0.22-3.45,0.85-6.78,3-9.46c1.06-0.47,2.21-0.55,3.33-0.77
+	/// <summary>
+	/// Provides SVG path data of the Persian Gulf
+	/// </summary>
+	public static string PersianGulfPathData { get; } =
+		@"M346.52,545c-0.22-3.45,0.85-6.78,3-9.46c1.06-0.47,2.21-0.55,3.33-0.77
 				c0.37-0.59,0.73-1.16,1.1-1.73c1.81-0.02,3.65-0.16,5.38,0.51c-0.04,2.29,1.97,3.8,2.88,5.74c0.85,0.02,1.68,0.04,2.54,0.08
 				c3.08,2.25,2.7,6.54,2.72,9.92c-0.81,1.56-2.54,2.38-3.57,3.78c-0.93,1.73,0.45,3.29,1.08,4.83c0.12,1.5-0.18,2.98-0.3,4.47
 				c0.99,0.45,1.99,0.87,3,1.3c-0.07,2.5-0.35,4.98-0.73,7.43h114.77c0.79-0.86,1.54-1.74,2.23-2.68c1.91-2.58,4.47-4.57,6.6-6.94
@@ -96,11 +96,11 @@ namespace DNTPersianComponents.Blazor
 				c1.34-0.95,3.06-0.65,4.61-0.79c1.24,1.4,2.46,2.84,3.71,4.24C269.51,398.95,269.65,400.07,269.43,401.16z M330.52,535.65
 				c0.1-2.15,0.02-4.3-0.12-6.43c1.48-0.77,3.1-1.26,4.77-1.2c0.63,3.76,0.24,7.65,0.75,11.45L330.52,535.65z";
 
-        /// <summary>
-        /// Provides SVG path data of the Caspian sea
-        /// </summary>
-        public static string CaspianSeaPathData { get; } =
-                @"M445.6,151.38c-0.81-8-4.38-15.47-4.51-23.59c-3.29-5.72-1.81-12.5-1.56-18.75
+	/// <summary>
+	/// Provides SVG path data of the Caspian sea
+	/// </summary>
+	public static string CaspianSeaPathData { get; } =
+		@"M445.6,151.38c-0.81-8-4.38-15.47-4.51-23.59c-3.29-5.72-1.81-12.5-1.56-18.75
 				c0.02-2.64,1.87-5.03,1.2-7.69c-0.53-3.31-1.28-6.66-0.73-10.03c0.32-2.58,2.01-4.73,2.35-7.29c0.22-1.3,0.59-2.56,1.04-3.8
 				c-0.1-2.35-1.22-4.45-2.98-5.99c-0.53,0.04-1.56,0.12-2.07,0.16c-2.74-1.62-2.86-5.38-6.05-6.47c-0.51-1.58-0.89-3.67-2.64-4.34
 				c-2.44-0.81-4.85-1.62-7.18-2.66c-0.1,1.89-0.14,3.78-0.14,5.64c-0.26,0.31-0.79,0.87-1.05,1.18c0-1.89-0.02-3.75-0.08-5.64
@@ -120,11 +120,11 @@ namespace DNTPersianComponents.Blazor
 				C444.3,152.74,445.87,152.72,445.6,151.38z M419.67,83.69c-1.73-2.09-1.58-5.01-2.25-7.51c-0.06-1.4-0.73-4.3,1.56-3.86
 				C418.57,76.16,420.17,79.88,419.67,83.69z";
 
-        /// <summary>
-        /// Provides SVG path data of the Iran's border
-        /// </summary>
-        public static string IranBorderPathData { get; } =
-                @"M749.69,551.97l-1,1.05
+	/// <summary>
+	/// Provides SVG path data of the Iran's border
+	/// </summary>
+	public static string IranBorderPathData { get; } =
+		@"M749.69,551.97l-1,1.05
 				c-1.84-0.27-3.76-0.97-5.64-1.46c-0.57-0.15-0.35-0.16-0.9,0.05c-0.8,0.3-1.38,0.78-1.95,1.25c-1.29,1.06-1.15,0.69-1.83,0.78
 				c-1.41,0.18-2.92-0.09-4.43-0.36l0,0.01c-1.59-0.29-3.19-0.57-4.88-0.43c-2.27,0.07-5.31-0.26-7.84-0.45l-2.14,3.4l-2.61,0.12
 				l-0.28,0.65l-0.97-0.79c-1.31-0.48-2.65-0.58-3.95-0.39c-2.05,0.29-3.26,1.06-4.9,2.09l0.67,2.01c-2.78-0.08-4.41,0.17-7.09,0.84
@@ -227,17 +227,17 @@ namespace DNTPersianComponents.Blazor
 				c-0.86,2.94-0.79,5.86-2.52,8.28c-1.76,2.46-2.51,4.14-3.42,6.96l0.64,0.65c1.16,1.18,2.65,1.88,2.67,3.19
 				c0.07,4.53,0.33,10.76,0.86,15.05l0.2,0.86c0.15,0.65,0.3,1.35,0.57,1.97h227.77v-20.36L749.69,551.97z";
 
-        /// <summary>
-        /// Provides SVG path data of the Iran's provinces
-        /// </summary>
-        public static IranProvinceValue<IranProvinceNameLocations> Values { get; } = new IranProvinceValue<IranProvinceNameLocations>
-        {
-            {
-                IranProvince.AzerbaijanEast,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M259.2,55.38c1.62,1.4,4.08,2.62,4.14,5.03
+	/// <summary>
+	/// Provides SVG path data of the Iran's provinces
+	/// </summary>
+	public static IranProvinceValue<IranProvinceNameLocations> Values { get; } = new IranProvinceValue<IranProvinceNameLocations>
+		{
+			{
+				IranProvince.AzerbaijanEast,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M259.2,55.38c1.62,1.4,4.08,2.62,4.14,5.03
 						c0.22,4.75-0.26,9.54,0.28,14.27c0.41,2.31-1.18,4.32-1.28,6.56c0.28,1.3,0.77,2.52,1.22,3.73c-2.23,3.49-7.02,5.89-6.66,10.57
 						c-0.1,2.05,2.5,2.05,3.86,2.78c2.5,1.22,5.13,1.91,7.9,2.19c1.42,0.12,0.97,1.91,1.2,2.86c0.1,2.84,1.14,5.56,1.6,8.36
 						c1.85,0.67,3.94,0.97,5.46,2.33c-0.53,2.25-3.13,3.37-3.53,5.68c-0.53,3.25,2.66,5.28,3.98,7.92c2.27,1.75,2.11,4.79,3.67,7.02
@@ -255,31 +255,31 @@ namespace DNTPersianComponents.Blazor
 						c3.02-0.12,4.91,2.88,7.81,3.09c2.25,0.14,4.36,0.99,6.54,1.52c1.79,0.42,3.23-0.87,4.63-1.75c1.89,0.61,3.9,1.48,5.91,0.87
 						c3.57-1.26,6.31-4.24,7.9-7.61c1.18-2.34,4.06-1.6,6.09-2.38c1.26-0.97,2.01-2.42,2.86-3.74C254.74,57.81,257.11,56.86,259.2,55.38
 						z",
-                    TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","100"},
-                            { "x","221"},
-                            { "text", "آذربایجان"}
-                        },
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","120"},
-                            { "x","225"},
-                            { "text", "شرقی"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.AzerbaijanWest,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M181.94,38.15
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","100"},
+							                  { "x","221"},
+							                  { "text", "آذربایجان"}
+						                  },
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","120"},
+							                  { "x","225"},
+							                  { "text", "شرقی"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.AzerbaijanWest,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M181.94,38.15
 						c0.71-0.22,1.4-0.45,2.11-0.67c1.99,1.95,4.06,3.78,6.15,5.6c1.34,1.2,1.26,3.17,1.75,4.77c0.18,1.62,1.62,2.58,2.6,3.73
 						c1.48,1.4,1.22,3.76,2.44,5.3c1.52,1.3,3.49,1.85,5.34,2.5c1.16,2.01,1.81,4.24,1.87,6.56c-2.25,2.29-5.18,3.59-8.18,4.61
 						c-0.18,0.39-0.51,1.2-0.69,1.6c1.28,3.49,3.06,6.86,3.71,10.55c-1.01,1.87-3.04,2.86-4.3,4.5c-1.3,2.05-2.21,4.47-1.54,6.88
@@ -299,23 +299,23 @@ namespace DNTPersianComponents.Blazor
 						c-0.02-1.79,0.73-3.45,1.18-5.13c-0.87-0.73-1.75-1.46-2.62-2.15c-0.95-3.41,0.83-6.6,1.64-9.82c-0.99-0.53-1.97-1.03-2.98-1.54
 						c-0.06-2.21-0.55-4.36-1.48-6.35c2.94-0.14,5.76,0.73,8.63,1.24c2.19-1.77,3.21-4.34,2.8-7.14c0.41-0.49,0.81-0.97,1.24-1.48
 						C181.47,40.46,181.71,39.3,181.94,38.15z",
-                    TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "transform","translate(185,113) rotate(68)"},
-                            { "text", "آذربایجان غربی"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Ardabil,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M274.1,46.89c1.14-0.14,2.25-0.3,3.39-0.47
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "transform","translate(185,113) rotate(68)"},
+							                  { "text", "آذربایجان غربی"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Ardabil,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M274.1,46.89c1.14-0.14,2.25-0.3,3.39-0.47
 						c3.15,3.27,6.35,6.45,9.34,9.84c-2.33,1.56-5.28,2.03-7.18,4.24c0.2,4.16,4.47,6.07,6.13,9.52c-2.07,0.49-4.2,0.63-6.27,1.08
 						c-1.64,1.3-2.7,3.17-3.82,4.91c2.07,2.33,4.71,4.12,6.56,6.68c1.18,1.6,2.98,3.02,5.09,2.6c0.71,2.64,2.6,4.61,4.3,6.64
 						c0.91,0.99,0.1,2.38,0.06,3.53c1.26,1.4,2.96,2.31,4.26,3.69c0.12,4.38-3.19,7.67-4.99,11.37c-1.26,4.2-0.24,8.57,0.32,12.81
@@ -325,24 +325,24 @@ namespace DNTPersianComponents.Blazor
 						c-3.73-0.18-6.9-2.33-10.43-3.29c0.34-1.73,0.43-3.63,1.71-4.97c1.79-2.07,4.02-3.77,5.26-6.27c-0.49-1.62-1.66-3.35-0.85-5.05
 						c0.59-1.99,1.22-4.04,0.89-6.13c-0.61-4.85,0.14-9.78-0.34-14.63c-0.89-2.31-3.17-3.65-4.83-5.38c2.17-0.51,4.73-0.16,6.45-1.79
 						C268.38,49.73,271.99,49.55,274.1,46.89z",
-                    TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","95"},
-                            { "x","265"},
-                            { "text", "اردبیل"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Isfahan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M378.24,238.51c1.58-0.85,2.4-2.6,3.53-3.92
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","95"},
+							                  { "x","265"},
+							                  { "text", "اردبیل"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Isfahan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M378.24,238.51c1.58-0.85,2.4-2.6,3.53-3.92
 						c2.46,2.17,4.91,4.53,8,5.72c2.19,0.1,4.34-0.51,6.51-0.63c4.99,0.2,9.23,3.11,13.52,5.3c9.54,0.34,19.08,0.73,28.62,1.22
 						c13.38-0.02,28.84-0.07,42.21-0.09c0.4,0.94,0.37,1.3,0.86,2.54c1.4,7.27,1.48,14.66,1.73,22.02c-1.14,1.24-2.15,2.62-3.47,3.67
 						c-1.87,1.06-4.06,1.32-6.15,1.79c-0.41,0.93-0.81,1.89-1.22,2.82c-1.72,1.48-2.35,3.79-3.88,5.4c-1.83,0.33-4-0.28-5.5,1.16
@@ -360,24 +360,24 @@ namespace DNTPersianComponents.Blazor
 						c2.48,0.18,4.36-1.6,6.62-2.29c2.33-0.59,4.83-0.26,7.12-1.05c1.75-1.04,3.35-2.36,4.79-3.8c0.63-2.21,1.16-4.48,2.11-6.6
 						c-1.02-1.64-2.11-3.25-3.35-4.73c0.83-0.83,1.93-1.46,2.52-2.5c0.37-1.71,0.24-3.45,0.28-5.18c1.67-0.71,3.29-1.58,5.03-2.07
 						c2.29-0.22,3.73,1.87,5.66,2.68C371.58,239.14,374.99,239.28,378.24,238.51z",
-                    TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","288"},
-                            { "x","382"},
-                            { "text", "اصفهان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Alborz,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M336.92,197.61c1.17-4.31,5.09-4.93,10.38-5.27
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","288"},
+							                  { "x","382"},
+							                  { "text", "اصفهان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Alborz,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M336.92,197.61c1.17-4.31,5.09-4.93,10.38-5.27
 						c2.39-0.15,4.29-0.17,5.82-0.19c2.42-0.03,3.87-0.05,4.76-0.54c0.5-0.28,0.71-0.43,0.81-0.51c-0.02-0.03-0.04-0.07-0.06-0.1
 						c-0.08-0.12-0.16-0.25-0.25-0.42c-0.34-0.68-0.27-1.91,0.17-2.8c0.35-0.72,0.9-1.18,1.58-1.31c0.49-0.1,0.69-0.51,0.97-1.18
 						c0.25-0.59,0.59-1.39,1.47-1.32c0.26,0.02,0.47,0,0.66-0.02c0.7-0.08,1.18-0.06,2.07,1c0.63,0.75,0.97,0.84,1.05,0.82
@@ -385,23 +385,23 @@ namespace DNTPersianComponents.Blazor
 						c-1.87-0.61-3.45-2.11-5.52-2.03c-4.18-0.1-8.34-0.53-12.5-1.04c1.16,2.31,3.86,2.8,5.93,4c0.67,1.54,0.2,3.21,0.04,4.81
 						c-2.15,1.58-4.34,3.19-6.9,4.04c-0.28,1.32-0.45,2.66-0.85,3.94c-0.85,0.99-2.03,1.6-3.07,2.35c0.28,2.82-1.91,4.85-2.27,7.51
 						C334.71,198.11,335.81,197.83,336.92,197.61z",
-                    TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "transform","translate(345,192) rotate(-45)"},
-                            { "text", "البرز"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Ilam,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M202.8,245.57c2.46-0.08,4.89-0.53,7.02-1.85
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "transform","translate(345,192) rotate(-45)"},
+							                  { "text", "البرز"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Ilam,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M202.8,245.57c2.46-0.08,4.89-0.53,7.02-1.85
 						c1.28,1.22,2.46,2.58,4.04,3.43c1.36,0.04,2.66-0.47,4.02-0.53c3.76,1.79,7.1,4.28,10.41,6.78c2.86,1.89,7.31,3.43,9.86,0.24
 						c1.89,0.06,3.73,0.3,5.56,0.81c3.23-0.51,2.94-4.36,5.18-6.09c0.41,0.51,1.24,1.5,1.64,2.01c0.57,2.6-0.85,4.97-3.23,6.01
 						c-3,0.71-6.13,0.57-9.15,1.18c-1.52,0.49-1.81,2.25-2.33,3.55c-1.81-0.45-4.79-1.36-5.48,1.14c-0.02,2.17,2.15,2.92,3.75,3.78
@@ -412,25 +412,25 @@ namespace DNTPersianComponents.Blazor
 						c0.43-1.36,0.63-2.74,0.73-4.14c-0.32-0.1-0.99-0.26-1.32-0.37c1.44-0.55,3.8-0.65,3.78-2.72c0.97-3.88-3.37-5.54-4.67-8.69
 						c0.02-0.51,0.06-1.56,0.08-2.09c-0.83-0.89-1.83-1.64-3.02-2.01c-0.22-1.26,0.73-3.35-0.87-3.9c-0.55-0.18-1.64-0.57-2.19-0.75
 						c0.85-1.08,1.71-2.15,2.52-3.23c-0.87-2.07-1.62-4.28-0.1-6.25C203.9,247.03,203.17,246.06,202.8,245.57z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(226,275) rotate(50)"},
-                            { "text", "ایلام"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Bushehr,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M324.01,387.42c0.69-2.41,3.94-4.02,6.05-2.39
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(226,275) rotate(50)"},
+							                  { "text", "ایلام"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Bushehr,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M324.01,387.42c0.69-2.41,3.94-4.02,6.05-2.39
 						c1.73,1.3,3.51,2.56,5.03,4.08c2.82,4.14,7.81,6.7,9.01,11.87c3.92,2.37,8.38,3.55,12.54,5.38c2.17,3.43,3.88,7.43,7.63,9.44
 						c5.36,2.84,7.9,8.52,11.59,13.01c2.03,2.64,3.55,5.72,4.49,8.91c0.04,5.01,0.22,10.11,1.73,14.92c1.5,2.6,3.02,5.2,4.26,7.94
 						c0.85,2.01,3.19,2.52,4.63,3.98c1.1,1.58,0.89,3.59,0.95,5.42c1.22,1.4,3.02,2.48,3.39,4.42c0.38,1.55,0.73,3.12,1.34,4.6
@@ -441,25 +441,25 @@ namespace DNTPersianComponents.Blazor
 						c-2.48-0.85-4.99-2.27-5.34-5.18c1.75-0.97,4.65-3.09,2.84-5.24c-1.89-2.21-5.05-2.9-7.85-2.46c0.97-1.95,1.71-4.12,0.67-6.21
 						c0.2-1.3,0.49-2.6,0.57-3.9c-2.76-1.83-4.79-4.36-6.66-7.04c-3.43-3.35-5.48-7.77-8.67-11.28c0.04-1.58,0.28-3.17,0.08-4.73
 						C325.9,389.82,324.9,388.64,324.01,387.42z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(359,435) rotate(57)"},
-                            { "text", "بوشهر"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Tehran,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M414.27,189.66c-3.61-0.96-7.06-2.84-10.88-2.8
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(359,435) rotate(57)"},
+							                  { "text", "بوشهر"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Tehran,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M414.27,189.66c-3.61-0.96-7.06-2.84-10.88-2.8
 						c-3.59,0.12-5.74,3.88-9.38,3.96c-3.41,0.83-6.66-0.83-9.86-1.75c-2.94-0.93-3.29-4.83-6.01-6.11c-2.4-1.1-4.77-2.23-6.78-3.98
 						c-0.68-0.63-1.45-1.09-2.26-1.48c-0.66,1.27-1.04,3.2-1.19,5.99c-0.11,1.97-0.49,2.96-1.25,3.22c-0.82,0.28-1.61-0.51-2.13-1.12
 						c-0.61-0.72-0.77-0.7-1.19-0.65c-0.22,0.03-0.5,0.06-0.87,0.03c-0.16,0.01-0.25,0.2-0.46,0.71c-0.27,0.66-0.65,1.57-1.7,1.78
@@ -469,25 +469,25 @@ namespace DNTPersianComponents.Blazor
 						c5.87,2.27,11.63,4.91,17.66,6.78c2.5,0.81,4.3,2.82,6.35,4.36c1.24-1.56,2.07-3.37,2.76-5.26c-1.44-1.91-3.23-3.51-5.07-4.99
 						c0.85-3.29,0.26-6.92,1.66-10.01c3.31-0.65,6.6,1.01,9.95,0.47c3.8-0.53,7.63-0.24,11.45,0.1c1.46-1.6,3.35-2.68,5.34-3.47
 						c1.42-3.61,5.85-3.71,8.08-6.56C417.74,190.88,415.81,190.1,414.27,189.66z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","201"},
-                            { "x","359"},
-                            { "transform",""},
-                            { "text", "تهران"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.ChaharMahaalBakhtiari,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M311.79,294.83c0.47-1.48,1.18-2.84,2.11-4.08
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","201"},
+							                  { "x","359"},
+							                  { "transform",""},
+							                  { "text", "تهران"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.ChaharMahaalBakhtiari,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M311.79,294.83c0.47-1.48,1.18-2.84,2.11-4.08
 						c2.23,2.74,3.67,5.99,5.91,8.71c2.76,1.06,6.76-1.34,8.91,1.6c1.4,2.03,3.43,3.27,5.87,3.67c1.77-0.89,3-2.42,4.2-3.92
 						c3.9-2.17,9.21-0.89,11.55,3c0.14,1.6-0.04,3.37,0.81,4.83c2.07,2.72,4.08,5.52,6.62,7.86c1.56,1.3,1.62,3.49,2.64,5.15
 						c0.93,1.48,2.21,2.72,3.33,4.06c-0.87,2.82-2.17,5.5-3.17,8.28c0.08,2.54-0.34,5.56,1.6,7.55c0.59,0.85,0,2.03,0.02,3.02
@@ -496,25 +496,25 @@ namespace DNTPersianComponents.Blazor
 						c-0.39-0.97-1.03-1.83-1.58-2.68c-0.28-1.22-0.24-2.74-1.46-3.47c-2.56-1.95-4.83-4.2-7.23-6.33c-2.05-1.71-2.48-4.57-4.28-6.48
 						c-1.44-1.58-1.5-3.82-2.37-5.68c-1.34-1.75-3.33-2.98-4.06-5.16c-0.95-3-4.14-4.08-6.56-5.6c-1.18-0.67-1.16-2.27-1.73-3.39
 						C309.9,296.37,310.84,295.6,311.79,294.83z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(328,314) rotate(47)"},
-                            { "text", "چهارمحال و بختیاری"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.KhorasanSouth,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M651.59,326.94c-0.79-2.86-1.22-5.82-1.18-8.79
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(328,314) rotate(47)"},
+							                  { "text", "چهارمحال و بختیاری"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.KhorasanSouth,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M651.59,326.94c-0.79-2.86-1.22-5.82-1.18-8.79
 						c0.06-2.17,0.89-4.24,0.99-6.39c-0.41-3.15-1.73-6.05-2.74-9.01c-2.44-6.84-4.85-13.68-7.33-20.52c-1.02-2.54-0.93-5.81,1.46-7.55
 						c2.25-1.66,3-4.53,5.17-6.27c0.39-1.3,0.75-2.62,1.12-3.94c-3.77-0.57-8.56,0.06-11.16-3.35c-1.75-1.81-0.51-4.36,0.65-6.11
 						c-0.89-3.73-1.85-7.49-1.42-11.35c-3.27,2.35-6.52,5.05-10.47,6.17c-0.71,0.28-1.36,0.24-1.97,0.03c0,0-0.01,0-0.01,0l-0.52,0
@@ -534,25 +534,25 @@ namespace DNTPersianComponents.Blazor
 						c6.33,6.19,12.08,12.95,18.35,19.22c4.3-2.23,8.99-4.55,11.37-9.03c0.83-3.29,1.22-6.7,1.7-10.05c3.21-0.69,6.47-1.2,9.72-1.7
 						c1.14-2.11,1.93-4.46,3.43-6.37c4.73-3.08,9.58-6.01,14.39-8.97c0.04-1.95-0.06-3.92-1.36-5.48
 						C651.27,329.46,652.14,328.24,651.59,326.94z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","289"},
-                            { "x","565"},
-                            { "transform",""},
-                            { "text", "خراسان جنوبی"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.KhorasanRazavi,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M651.38,201.47
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","289"},
+							                  { "x","565"},
+							                  { "transform",""},
+							                  { "text", "خراسان جنوبی"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.KhorasanRazavi,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M651.38,201.47
 						c2.54-3.43,3.84-7.55,4.99-11.61c-1.44-0.71-2.58-1.81-3.15-3.33c1.54-2.48,1.44-5.48,0.61-8.16c-0.97-0.26-1.93-0.51-2.84-0.87
 						c-0.69-2.07,1.36-3.63,1.62-5.6c0.3-3.13-1.4-5.95-2.62-8.71c0.61-2.54,0.63-5.16,0.79-7.75c-0.63-0.63-1.24-1.28-1.83-1.91
 						c-6.29,0.65-12.6,0.65-18.9,1.18c-1.26,0-2.7,0.28-3.71-0.63c-1.12-1.72-1.56-3.94-3.39-5.13c-2.86-1.89-3.53-5.46-5.5-8.08
@@ -572,25 +572,25 @@ namespace DNTPersianComponents.Blazor
 						c4.45,0.45,8.93,2.03,12.22,5.18c4.18,0.04,7.37-2.96,10.59-5.24c3.1-2.19,4.71-5.99,7.96-8.04c1.69-0.29,3.43-0.2,5.11-0.55
 						c-1.85-2.31-4.04-4.32-5.99-6.56c1.4-0.81,2.98-1.2,4.59-1.4c0.18-0.61,0.39-1.22,0.59-1.83c0.69-0.33,1.38-0.67,2.05-1.06
 						c0.63-2.33,1.48-4.59,2.17-6.9c0.04-3.19,0.39-6.33,1.32-9.4C651.06,206.06,650.73,203.65,651.38,201.47z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","190"},
-                            { "x","583"},
-                            { "transform",""},
-                            { "text", "خراسان رضوی"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.KhorasanNorth,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M532.13,103.93c1.66-0.65,2.84-2.07,4.1-3.27
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","190"},
+							                  { "x","583"},
+							                  { "transform",""},
+							                  { "text", "خراسان رضوی"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.KhorasanNorth,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M532.13,103.93c1.66-0.65,2.84-2.07,4.1-3.27
 						c0.41,2.46,1.85,4.5,3.31,6.45c-0.04,1.46-0.49,3.37,0.99,4.34c2.62,2.5,6.49,0.91,9.56,2.29c1.79,0.77,3.61,1.6,5.64,1.44
 						c2.29,1.52,4.93,2.33,7.69,2.58c0.39,1.91,1.52,3.37,3.47,3.86c0.81,1.36,1.72,2.68,2.4,4.14c0.32,2.5-0.65,5.09,0,7.57
 						c0.61,1.6,1.54,3.02,2.31,4.53c-1.66,1.79-4.95,1.18-5.99,3.55c-0.65,2.74,1.24,5.14,1.99,7.63c-1.95,1.14-3.94,2.17-5.97,3.17
@@ -600,25 +600,25 @@ namespace DNTPersianComponents.Blazor
 						c0.59-1.44,1.54-2.68,2.8-3.61c3.57,0.16,6.05-3,7.26-5.99c0.53-4.28,1.6-8.58,3.76-12.34c1.3-2.44,5.03-3.59,4.5-6.82
 						c0.14-1.64-0.97-2.94-1.75-4.26c0.75-0.55,1.52-1.12,2.27-1.68c-0.45-1.28-0.91-2.54-1.36-3.8c1.75-1.22,3.86-1.1,5.89-0.95
 						c1.66,1.62,3.59,0.34,5.3-0.47c1.64,0.49,2.72,2.07,4.42,2.43C528.94,104.19,530.56,104.21,532.13,103.93z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","138"},
-                            { "x","525"},
-                            { "transform",""},
-                            { "text", "خراسان شمالی"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Khuzestan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M269.05,285.98c1.24-0.57,2.48-1.5,3.9-1
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","138"},
+							                  { "x","525"},
+							                  { "transform",""},
+							                  { "text", "خراسان شمالی"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Khuzestan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M269.05,285.98c1.24-0.57,2.48-1.5,3.9-1
 						c3.08,0.79,6.25,0.91,9.42,1.1c2.05,0.83,3.65,2.54,5.74,3.31c4.59,0.33,9.6-0.43,13.74,2.07c2.05,1.76,3.88,3.75,6.13,5.25
 						c0.28,1.4,0.3,2.9,1.01,4.16c2.03,1.34,4.42,2.11,6.15,3.88c0.99,1.2,1.32,2.82,2.31,4.06c0.95,1.03,2.13,1.87,2.98,2.98
 						c0.79,1.99,0.93,4.28,2.52,5.87c1.81,1.95,2.23,4.79,4.3,6.5c2.66,2.31,5.03,4.91,7.94,6.92c0.04,1.83,0.83,3.47,1.89,4.95
@@ -635,25 +635,25 @@ namespace DNTPersianComponents.Blazor
 						c-0.04-4.85-0.1-9.78,0.83-14.57c1.18-4.26,3.51-8.12,4.77-12.36c0.33-1.42-0.87-2.48-1.64-3.49c-1.08-1.2-1.67-2.7-2.37-4.12
 						c2.03-1.32,3.33-3.23,3.41-5.68c2.01-2.39,4.18-4.83,4.59-8.06c1.54-2.96,0.24-6.25,0.45-9.38c-0.12-1.48,1.85-1.26,2.74-1.66
 						c0.06-1.22,0.1-2.44,0.18-3.63C267.48,289.7,268.42,287.89,269.05,285.98z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","338"},
-                            { "x","277"},
-                            { "transform",""},
-                            { "text", "خوزستان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Zanjan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M273.82,138.57c2.96,0.41,5.05-2.27,7.86-2.68
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","338"},
+							                  { "x","277"},
+							                  { "transform",""},
+							                  { "text", "خوزستان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Zanjan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M273.82,138.57c2.96,0.41,5.05-2.27,7.86-2.68
 						c2.27,0.67,4.38,1.91,5.89,3.75c1.54,2.23,4.49,1.24,6.72,1.1c3.21,1.48,6.88,0.2,10.05,1.97c0.49,2.25,0.41,4.89,2.11,6.68
 						c1.14,1.36,2.94,3.43,1.6,5.2c-3.47,0.16-6.76,1.58-9.19,4.06c-0.63,0.97-0.79,2.21-0.71,3.37c0.77,1.12,1.73,2.09,2.62,3.11
 						c1.75,2.31,5.11,1.24,7.45,2.56c2.35,0.61,3.86,2.54,4.65,4.73c0.79,1.24-0.49,2.38-1.14,3.33c-1.42,1.71-2.44,3.71-3.9,5.4
@@ -663,25 +663,25 @@ namespace DNTPersianComponents.Blazor
 						c-1.18-2.27-3.51-4.06-6.03-4.55c-3.35-0.04-6.7-0.08-9.97-0.79c-0.34-2.03-0.49-4.08-0.49-6.13c-1.62-2.15-3.17-4.38-4.38-6.8
 						c0.73-0.85,1.38-1.79,2.23-2.5c1.52-0.85,3.53-1.01,4.57-2.56c1.4-1.62,1.89-4.02,3.65-5.24c2.94-0.45,5.22,2.03,7.89,2.78
 						c0.69-1.5,0.43-3.96,2.25-4.61C270.1,137.13,271.77,138.63,273.82,138.57z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","165"},
-                            { "x","271"},
-                            { "transform",""},
-                            { "text", "زنجان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Semnan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M494.58,142.69c2.11,0.43,4.28,0.65,6.33,1.36
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","165"},
+							                  { "x","271"},
+							                  { "transform",""},
+							                  { "text", "زنجان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Semnan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M494.58,142.69c2.11,0.43,4.28,0.65,6.33,1.36
 						c0.99,2.23-0.1,5.1,1.5,7.04c1.4,0.59,2.92,0.81,4.32,1.4c1.44,1.85,1.42,5.2,4.12,5.7c2.15,0.59,4.36,1.08,6.48,1.85
 						c1.46-0.59,2.82-1.4,4.02-2.46c1.81,1.14,3.08,3,2.72,5.24c0.45,2.78-2.84,4.38-2.58,7.1c0.08,4.99,1.16,9.88,1.18,14.88
 						c0.65,3.29,3.96,4.99,5.99,7.37c1.2,2.88,1.22,6.15,0.97,9.22c-0.04,2.86-3.15,3.81-4.95,5.44c-2.98,2.76-6.17,5.32-9.36,7.84
@@ -694,25 +694,25 @@ namespace DNTPersianComponents.Blazor
 						c2.6,0.04,5.22-0.04,7.79,0.24c1.4-0.14,2.8-0.18,4.18-0.47c2.42-0.95,3.76-3.43,5.95-4.73c1.87-0.06,3.75,0.55,5.58,0.04
 						c2.15-0.95,3.8-2.82,6.09-3.51c3.59-1.04,7.35-0.39,10.98-0.1c2.74-3.8,5.54-8.14,5.3-12.97
 						C492.87,144.5,493.81,143.65,494.58,142.69z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","matrix(1 0 0 1 442.06,206.66)"},
-                            { "text", "سمنان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.SistanBaluchestan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M648.93,339.58c1.54-0.89,3.06-2.38,5.01-1.99
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","matrix(1 0 0 1 442.06,206.66)"},
+							                  { "text", "سمنان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.SistanBaluchestan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M648.93,339.58c1.54-0.89,3.06-2.38,5.01-1.99
 						c8.34,0.63,16.7,1.2,25.07,1.83c2.17,0.12,1.72,2.92,2.31,4.42c0.49,0.45,0.99,0.87,1.48,1.32c0.1,2.21,0.85,4.3,1.83,6.25
 						c-1.64,1.99-0.59,4.87-1.91,6.96c-8.38,11.93-17.13,23.63-25.31,35.7c3.88,4.93,8.5,9.21,12.62,13.96
 						c1.03,1.24,2.23,2.29,3.49,3.29c0.08,1.85-0.18,3.98,1.64,5.11c0.12,2.74,3.45,3.27,4.3,5.64c1.22,2.96,2.21,6.11,4.38,8.54
@@ -735,25 +735,25 @@ namespace DNTPersianComponents.Blazor
 						c-1.1-13.38-1.4-26.83-2.98-40.17c-0.14-2.42-2.23-3.88-3.88-5.3c2.09-1.24,4.36-2.17,6.35-3.61c1.62-1.62,3.27-3.25,4.75-5.01
 						c1.04-3.31,1.2-6.84,1.85-10.25c3.15-0.49,6.31-1.02,9.46-1.58c1.18-2.19,1.95-4.67,3.57-6.58
 						C642.01,343.6,645.6,341.82,648.93,339.58z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","488"},
-                            { "x","650"},
-                            { "transform",""},
-                            { "text", "سیستان و بلوچستان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Fars,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M380.49,341.92c1.34-2.35,2.72-4.91,4.91-6.58
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","488"},
+							                  { "x","650"},
+							                  { "transform",""},
+							                  { "text", "سیستان و بلوچستان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Fars,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M380.49,341.92c1.34-2.35,2.72-4.91,4.91-6.58
 						c2.98-0.59,5.14,1.91,7.37,3.41c4.02,3.37,10.27,0.69,14.04,4.57c1.16,1.93,1.62,4.18,2.5,6.25c1.52,3.57,0.28,7.82,2.33,11.24
 						c1.95,3.15,5.89,3.76,8.93,5.36c4.51,2.44,8.89,5.3,13.88,6.66c2.07,0.67,4.55,1.04,5.91,2.94c1.12,2.11,1.4,4.55,1.79,6.88
 						c0.65,3.88-0.47,7.96,1.05,11.69c0.75,1.95,2.7,3,4.08,4.47c1.3,1.2,1.56,3.02,2.15,4.61c0.99,3.39,3.69,6.07,6.76,7.71
@@ -769,25 +769,25 @@ namespace DNTPersianComponents.Blazor
 						c2.31-3.67-1.93-6.82-3.06-10.11c1.6,0,3.47-0.26,4.63,1.18c3.11,3.39,7.63,4.77,11.33,7.35c2.15,1.75,6.07,0.79,6.62-2.07
 						c0.32-3.19,0.55-6.64-1.4-9.38c2.13-2.68,1.99-6.07,1.91-9.3c-0.12-4.08,3.63-7.37,2.68-11.51
 						C380.35,349,379.4,345.35,380.49,341.92z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","434"},
-                            { "x","411"},
-                            { "transform",""},
-                            { "text", "فارس"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Qazvin,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M300.81,158.32c2.25-1.87,5.16-2.41,8-2.76
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","434"},
+							                  { "x","411"},
+							                  { "transform",""},
+							                  { "text", "فارس"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Qazvin,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M300.81,158.32c2.25-1.87,5.16-2.41,8-2.76
 						c1.01,1.36,1.95,2.94,3.57,3.65c1.83,0.93,3.94,0.85,5.89,1.34c1.83,0.77,3.53,2.05,5.62,1.91c3.17,0.26,5.46-2.52,8.48-2.94
 						c3.59-0.85,7.04,1,10.15,2.54c3.82,2.01,8.24,3.57,10.8,7.27c0.79,1.14-0.02,2.8-1.52,2.37c-3.69-0.41-7.49-0.45-11.1-1.5
 						c-0.39,1.1-1.26,2.19-0.24,3.27c1.28,1.72,3.77,1.85,5.34,3.23c0.14,1.07,0,2.15-0.04,3.23c-2.01,1.62-4.26,2.82-6.56,3.98
@@ -797,50 +797,50 @@ namespace DNTPersianComponents.Blazor
 						c-0.49-0.67-1.32-1.56-0.61-2.39c1.46-1.6,4.18-2.88,3.06-5.56c1.46,1.03,2.68,2.76,4.53,3.09c2.31-0.93,4.59-1.99,7.12-2.01
 						c1.99,0.02,3.27-1.64,4.18-3.19c1.32-2.35,3.57-4.14,4.3-6.82c-0.97-1.64-1.75-3.43-2.98-4.89c-2.29-1.42-4.95-2.25-7.63-2.54
 						c-1.91-0.04-2.8-2.01-3.98-3.23C298.42,161.2,299.47,159.05,300.81,158.32z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(315,192) rotate(-45)"},
-                            { "text", "قزوین"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Qom,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M351.06,210.68c3.23,0.57,6.66,0.3,9.66,1.81
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(315,192) rotate(-45)"},
+							                  { "text", "قزوین"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Qom,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M351.06,210.68c3.23,0.57,6.66,0.3,9.66,1.81
 						c3.65,1.73,7.55,2.84,11.2,4.55c2.94,1.38,6.47,1.71,8.95,3.98c0.85,0.75,1.68,1.52,2.54,2.29c-0.04,3.09-1.6,5.85-2.19,8.83
 						c-0.63,2.7-2.58,5.83-5.7,5.74c-2.42,0.18-4.85,0.08-7.29,0.06c-1.44-1.24-2.96-2.58-4.93-2.84c-2.35,0.18-4.36,1.58-6.49,2.46
 						c-0.26,1.93-0.41,3.88-0.55,5.8c-0.97,0.87-1.93,1.75-2.86,2.64c-2.29-1.12-4.34-2.7-6.68-3.69c-2.11,0.16-4.16,0.95-6.29,0.61
 						c-0.75-1.54-1.85-2.8-3.43-3.55c-0.51-2.09-0.16-4.65-1.91-6.21c-2.05-0.41-4.16-0.18-6.23-0.16c-1.91-3.49,1.66-6.54,3-9.56
 						c2.44,0.67,4.79,1.52,7.08,2.54c1.54-1.26,2.98-2.64,4.36-4.06c2.44,0.1,4.85-0.24,7.12-1.12
 						C351.51,217.52,351,214.05,351.06,210.68z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","230"},
-                            { "x","345"},
-                            { "transform",""},
-                            { "text", "قم"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Kurdistan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M212.3,162.16c1.26-1.16,2.66-2.15,4.14-3
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","230"},
+							                  { "x","345"},
+							                  { "transform",""},
+							                  { "text", "قم"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Kurdistan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M212.3,162.16c1.26-1.16,2.66-2.15,4.14-3
 						c2.23,0.91,3.59,4.3,6.47,3.45c4.47-0.91,9.03-0.45,13.54-0.55c2.03,4.48,6.98,8.24,12.06,6.55c3.17-1.75,7.51-1.26,9.5-4.79
 						c2.68-0.06,5.72-0.16,7.77,1.91c2.52,1.93,1.85,5.42,2.25,8.18c-0.73,0.95-1.44,1.91-2.15,2.88c0.77,0.87,1.54,1.77,2.31,2.64
 						c-0.95,0.93-2.9,1.68-2.27,3.37c0.93,1.85,2.62,3.17,3.82,4.85c0.57,0.39,1.16,0.77,1.75,1.16c-3,0.83-8.02,0.49-8.14,4.77
@@ -851,25 +851,25 @@ namespace DNTPersianComponents.Blazor
 						c3.63-0.61,7.45-1.71,9.5-5.05c-1.26-1.87-3.88-0.73-5.74-1.04c-0.3-0.37-0.93-1.1-1.24-1.46c-2.86-0.02-5.8-0.02-8.48,1.12
 						c-0.97-0.43-2.42-0.45-2.74-1.66c-0.89-2.15-2.39-3.94-4.04-5.56c0.69-1.75,1.16-3.63,2.42-5.07c2.01-0.41,4.14,0,6.11-0.65
 						C211.3,165.77,210.82,163.37,212.3,162.16z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","192"},
-                            { "x","230"},
-                            { "transform",""},
-                            { "text", "کردستان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Kerman,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M522.24,325.05c3.31-0.14,6.6-1.14,9.9-0.81
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","192"},
+							                  { "x","230"},
+							                  { "transform",""},
+							                  { "text", "کردستان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Kerman,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M522.24,325.05c3.31-0.14,6.6-1.14,9.9-0.81
 						c8.57,3.17,17.76,4,26.47,6.7c4.97,1.28,9.56,3.65,13.88,6.37c4.89,3.92,9.6,8.04,14.49,11.97c8.77,6.72,15.67,15.43,23.24,23.36
 						c1.28,1.18,2.88,1.91,4.14,3.11c1.3,1.26,1.28,3.17,1.5,4.83c1.2,12.93,1.87,25.9,2.7,38.85c1.48,2.62,2.84,5.32,3.98,8.12
 						c-1.66,1.5-3.82,3.27-3.33,5.78c0.49,1.81,1.91,3.21,2.74,4.87c1.89,3.17,1.04,7,1.22,10.49c-4.75,1.32-10.33-1.64-14.55,1.79
@@ -886,25 +886,25 @@ namespace DNTPersianComponents.Blazor
 						c-0.43-5.87-2.74-11.41-3.71-17.19c2.13-0.96,4.22-2.17,6.58-2.54c2.66,0.39,5.03,1.89,7.69,2.17c3.39-0.95,6.56-2.62,9.88-3.77
 						c7.31-2.68,14.53-5.83,20.8-10.51c1.93-1.36,2.43-3.78,3.08-5.89c2.23,0.53,4.47,1.08,6.68,1.69c1.52-0.63,2.92-1.52,4.12-2.68
 						c2.09-1.95,4.63-3.51,6.23-5.91C522.36,328.44,522.2,326.74,522.24,325.05z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","408"},
-                            { "x","540"},
-                            { "transform",""},
-                            { "text", "کرمان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Kermanshah,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M216.3,206.99c0.55-1.14,0.53-2.8,1.66-3.45
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","408"},
+							                  { "x","540"},
+							                  { "transform",""},
+							                  { "text", "کرمان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Kermanshah,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M216.3,206.99c0.55-1.14,0.53-2.8,1.66-3.45
 						c3.13-0.18,2.64,3.79,4.71,5.22c3.59,2.56,5.16,6.84,7.94,10.11c2.54,2.15,6.29,2.29,9.19,0.77c1.87-0.45,1.97-2.58,2.52-4.08
 						c1.54-0.49,3.25-0.73,4.61-1.66c0.81-0.85,1.42-1.89,2.23-2.74c5.03-2.56,11.43-0.49,14.33,4.28c-0.69,1.85-0.39,3.75,0.34,5.52
 						c0.89,1.97-0.67,3.75-1.22,5.56c1.32,1.62,3.53,2.13,5.32,3.08c0.04,1.04,0.08,2.05,0.12,3.09c-1.62,2.01-3.37,3.96-5.68,5.18
@@ -917,25 +917,25 @@ namespace DNTPersianComponents.Blazor
 						c0.57-0.02,1.71-0.08,2.27-0.1c0.51-0.65,1.01-1.3,1.52-1.95c-0.28-0.83-0.59-1.64-0.89-2.48c1.38,0.73,2.96,2.48,4.53,1.2
 						c2.42-1.73,0.87-4.95-0.43-6.9c1.48-1.48,3.61-2.35,4.59-4.3c1.18-0.24,2.68-0.22,3.23-1.56c0.06-1.16-0.28-2.27-0.49-3.39
 						c0.28-0.32,0.85-0.95,1.12-1.28c1.62,0.28,3.29,0.47,4.71-0.53C214.25,207.07,215.28,207.11,216.3,206.99z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","236"},
-                            { "x","215"},
-                            { "transform",""},
-                            { "text", "کرمانشاه"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.KohgiluyehBoyerAhmad,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M332.13,343.02
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","236"},
+							                  { "x","215"},
+							                  { "transform",""},
+							                  { "text", "کرمانشاه"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.KohgiluyehBoyerAhmad,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M332.13,343.02
 						c1.05,0.63,2.11,1.28,3.17,1.93c1.5,0.04,3.02-0.08,4.51,0.24c1.3,1.12,2.21,2.94,4.14,2.98c3,0.24,4.65,3.27,7.51,3.88
 						c2.92,0.43,5.97-0.34,8.81,0.55c2.6,1.81,4.46,4.55,5.8,7.37c0.77,2.07,3.59,1.24,4.87,2.74c1.71,1.89,3.73,3.53,6.39,3.69
 						c0.28,2.54-1.18,4.61-1.93,6.88c1.66,2.88,1.58,6.17,1.52,9.38c-1.06,1.16-2.56,2.31-4.2,1.58c-2.6-1.28-4.91-3.07-7.55-4.26
@@ -944,33 +944,33 @@ namespace DNTPersianComponents.Blazor
 						c1.3-1.32,2.44-2.82,3.25-4.5c-1.08-0.43-2.17-0.83-3.27-1.24c-0.73-2.23-2.5-3.45-4.69-4.02c-0.47-1.08-0.77-2.21-1.26-3.27
 						c-2.39-1.22-5.18-0.95-7.73-1.6c-1.5-0.51-2.17-2.07-3-3.29c0.95-1.01,2.27-1.85,2.66-3.25c0-1.3-0.3-2.56-0.47-3.84
 						c1.66-0.69,3.84-0.73,4.97-2.31C328.31,346.83,330.12,344.84,332.13,343.02z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(341,356) rotate(37)"},
-                            { "text", "کهکیلویه و"}
-                        },
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(331,361) rotate(47)"},
-                            { "text", "بویر احمد"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Golestan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M494.68,107.19c2.44-0.67,4.3,1.85,6.76,1.54
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(341,356) rotate(37)"},
+							                  { "text", "کهکیلویه و"}
+						                  },
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(331,361) rotate(47)"},
+							                  { "text", "بویر احمد"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Golestan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M494.68,107.19c2.44-0.67,4.3,1.85,6.76,1.54
 						c2.84-0.16,5.74-0.51,8.5,0.49c1.16,1.56,2.41,3.88,0.99,5.66c-4.99,3.55-6.68,9.97-7.43,15.75c-0.12,1.81-1.5,3.15-2.58,4.47
 						c-1.34,1.95-4.24,1.1-5.66,2.86c-0.59,0.61-1.1,1.24-1.6,1.89c0.24,2.25-1.1,3.96-2.68,5.38c0.1,1.08,0.22,2.15,0.35,3.23
 						c-1.56,3-2.48,6.39-4.85,8.91c-3.33-0.04-6.68-0.79-9.94,0.08c-2.44,0.51-4.3,2.21-6.39,3.41c-1.66,1.02-3.67,0.28-5.44,0.02
@@ -979,50 +979,50 @@ namespace DNTPersianComponents.Blazor
 						c-0.63-4.04-2.21-7.88-2.86-11.91c2.9,0.04,5.76,0.63,8.65,0.77c2.54-0.63,4.75-2.03,6.92-3.39c1.77-1.2,3.92,0.12,5.87-0.28
 						c1.12-0.59,2.05-1.5,2.78-2.54c1.83-2.8,0.28-6.82,2.88-9.25c2.58-2.19,5.42-4.1,7.53-6.76c3-0.67,5.8-2.07,8.12-4.12
 						C488.43,107.32,491.8,107.78,494.68,107.19z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(465,152) rotate(-47)"},
-                            { "text", "گلستان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Gilan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M292.43,94.63c2.33-1.06,5.09-1.1,7.45-2.29
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(465,152) rotate(-47)"},
+							                  { "text", "گلستان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Gilan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M292.43,94.63c2.33-1.06,5.09-1.1,7.45-2.29
 						c-0.39,3.83-0.51,7.73-0.18,11.59c0.37,4.06,0.06,8.24,1.3,12.18c1.14,2.52,2.5,5.16,4.95,6.64c6.56,4.73,14.94,6.6,22.91,6.19
 						c2.48,1.36,5.14,2.25,7.85,2.98c-0.35,3.7,0.83,7.61,3.78,9.99c2.29,1.72,4.81,3.13,7.08,4.87c-0.57,1.22-1.06,2.46-1.81,3.57
 						c-1.3,1.1-3.47,0.61-4.63,1.85c-0.59,1.69-0.41,3.51-0.47,5.26c-0.37,0.57-0.73,1.16-1.1,1.74c-2.56-0.67-5.26-1.52-7.85-0.61
 						c-2.78,0.51-4.95,2.84-7.83,2.8c-2.62,0.1-4.53-2.27-7.16-2.19c-2.6-0.18-5.95-1.2-6.56-4.12c-0.53-2.15-0.95-4.44-2.64-6.03
 						c-1.93-1.83-1.56-4.65-2.4-6.98c-1.34-0.87-2.98-1.05-4.42-1.7c-0.93-2.72-0.85-5.89-2.78-8.18c-2.64-3.19-5.52-6.64-5.83-10.92
 						c-0.47-3.59-1.28-7.39,0.1-10.86c1.95-3.53,5.03-6.9,4.79-11.2C296.41,97,293.81,96.27,292.43,94.63z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(311,135) rotate(50)"},
-                            { "text", "گیلان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Lorestan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M257.19,234.74c1.85,0.59,2.94,2.19,4.22,3.53
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(311,135) rotate(50)"},
+							                  { "text", "گیلان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Lorestan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M257.19,234.74c1.85,0.59,2.94,2.19,4.22,3.53
 						c1.79,1.95,4.87,1.91,6.56,3.96c2.05,2.19,4.45,4.1,7.1,5.44c3.21,0.73,6.41-0.45,8.93-2.4c4.75-1.1,6.39,5.24,10.82,5.48
 						c-1.38,2.23-0.85,4.83-0.53,7.27c0.75,1.14,1.46,2.31,2.13,3.51c0.71,0.04,1.44,0.08,2.15,0.14c0.73,0.65,1.28,1.85,2.42,1.73
 						c2.42,0.47,4.16-1.5,6.03-2.68c1.87,1.73,4.06,0.99,6.13,0.16c0.16,1.5,0.2,3.02,0.51,4.53c0.71,0.59,1.52,1.04,2.31,1.5
@@ -1033,25 +1033,25 @@ namespace DNTPersianComponents.Blazor
 						c-5.5-4.71-11.71-8.55-18.12-11.87c-0.41-1.24-0.83-2.48-1.26-3.69c-1.46-0.65-3.88-1.18-3.17-3.33c1.58-0.06,3.17,0.71,4.71,0.45
 						c0.69-1.07,1.08-2.34,1.89-3.33c3.39-0.81,6.92-0.95,10.37-1.46c0.99-1.2,2.25-2.23,2.96-3.63c0.12-1.1,0.06-2.21,0.04-3.31
 						c-2.01-2.33-0.34-5.46-0.91-8.2c1.28-2.94,5.26-0.67,7.14-3C257.54,237.68,257.34,236.22,257.19,234.74z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","268"},
-                            { "x","261"},
-                            { "transform",""},
-                            { "text", "لرستان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Mazandaran,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M348.34,147.58c2.52,1.99,5.16,3.84,7.71,5.78
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","268"},
+							                  { "x","261"},
+							                  { "transform",""},
+							                  { "text", "لرستان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Mazandaran,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M348.34,147.58c2.52,1.99,5.16,3.84,7.71,5.78
 						c3.51,2.72,7.92,3.84,12.16,4.85c3.61,0.49,6.84,2.35,10.43,2.86c6.76,1,13.56-0.41,20.11-2.03c3.94-0.85,8.06-0.77,11.95-1.87
 						c4.02-1.68,8.18-3.03,12.4-4.14c3.15-0.53,6.35-0.63,9.54-0.67c1.64,2.64,4.81,2.39,7.49,2.19c0.16,1.42-0.14,3.04,0.65,4.32
 						c1.64,1.28,3.84,1.42,5.64,2.38c0.97,1.99,2.05,3.94,4.47,4.3c-2.58,0.57-5.78,0.61-7.16,3.31c-1.56,3.39-3.39,6.86-6.41,9.19
@@ -1060,25 +1060,25 @@ namespace DNTPersianComponents.Blazor
 						c-1.42-2.35-2.82-5.07-5.58-6.05c-3.21-1.28-5.78-3.61-8.59-5.54c-2.01-0.26-3.77-1.28-5.52-2.25c-3.21,1.06-6.13-0.55-8.83-2.09
 						c0.57-3.69-2.8-5.87-5.5-7.57c-2.7-1.48-5.52-2.78-8.22-4.28c0.47-0.97,0.93-1.93,1.38-2.9c-0.1-1.38-0.51-2.82-0.06-4.18
 						c1.36-0.55,2.82-0.85,4.16-1.48C347.11,150.26,347.65,148.88,348.34,147.58z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","176"},
-                            { "x","390"},
-                            { "transform",""},
-                            { "text", "مازندران"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Markazi,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M317.64,198.97c1.64,0.39,3.31,0.1,4.89-0.37
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","176"},
+							                  { "x","390"},
+							                  { "transform",""},
+							                  { "text", "مازندران"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Markazi,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M317.64,198.97c1.64,0.39,3.31,0.1,4.89-0.37
 						c3.75,2.58,8.83,2.23,12.89,0.65c2.27-0.91,4.75-0.77,7.14-0.69c2.11,0.04,3.63,1.87,5.66,2.23c1.97,0.35,3.98,0.38,5.95,0.69
 						c-2.05,3.49-4.47,7.16-4.22,11.39c-0.1,2.35,0.55,4.87-0.41,7.08c-1.91,1.12-4.18,0.63-6.27,0.97c-1.75,0.92-2.94,2.58-4.32,3.92
 						c-2.37-0.85-4.67-2.23-7.23-2.33c-2.58,2.25-3.73,5.66-5.07,8.73c0.57,0.89,1.12,1.79,1.68,2.7c2.15,0.18,4.3,0.12,6.45,0.04
@@ -1091,25 +1091,25 @@ namespace DNTPersianComponents.Blazor
 						c-0.49-0.1-1.46-0.33-1.95-0.45c-0.53-1.52-0.99-3.09-1.38-4.65c1.64-2.19,2.9-4.65,4.85-6.58c1.73-1.5,0.22-3.86,0.14-5.7
 						c2.13-2.8,4.61-5.34,8-6.51c0.39-1.52-1.06-2.35-1.93-3.35c2.19,0.53,4.22-0.45,4.91-2.64c0.95-1.46-1.02-2.31-1.91-3.06
 						c0.1-1.38,0.22-2.74,0.34-4.1c2.54-0.16,5.38,0.18,7.63-1.24C317.64,200.56,317.68,199.76,317.64,198.97z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","245"},
-                            { "x","309"},
-                            { "transform",""},
-                            { "text", "مرکزی"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Hormozgan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M496.53,442.22c3.51-2.31,6.94-6.09,11.57-4.89
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","245"},
+							                  { "x","309"},
+							                  { "transform",""},
+							                  { "text", "مرکزی"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Hormozgan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M496.53,442.22c3.51-2.31,6.94-6.09,11.57-4.89
 						c1.48,5.28,1.1,10.8,1.28,16.22c-0.14,2.96,3.21,3.83,5.01,5.54c2.94,2.78,7.31,3.63,11.18,2.7c3.08-2.11,6.03-4.44,9.44-6.03
 						c1.42,0.45,2.9,0.83,4.22,1.54c1.42,3.12,0.1,6.84,1.52,9.88c2.41,1.75,5.56,2.05,8.36,2.92c0.41,1.58,1.1,3.07,2.15,4.32
 						c-2.35,1.64-5.18,3.17-6.43,5.87c0.28,2.27,0.63,4.53,0.97,6.78c2.01,2.31,3.98,4.67,5.91,7.06c2.7,3.39,7.47,4.69,9.34,8.83
@@ -1130,25 +1130,25 @@ namespace DNTPersianComponents.Blazor
 						c2.37,0,4.77,0.02,7.16,0.02c3.49,0.14,6.6-1.87,10.07-2.03c2.15-0.12,4.55-0.57,5.95-2.42c1.04-2.35-0.3-5.52,1.75-7.51
 						c1.77-2.19,4.79-2.27,7.25-3.19c-1.2-2.07-2.6-4.2-2.52-6.7c-1.81-1.71-4.44-1.56-6.68-2.25c-1.07-0.02-1.14-1.28-1.14-2.05
 						c-0.02-4.77-0.12-9.56,0.3-14.33c0.3-1.42-1.3-3.21,0.16-4.26C493.08,443.28,495.07,443.36,496.53,442.22z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","483"},
-                            { "x","506"},
-                            { "transform",""},
-                            { "text", "هرمزگان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Hamadan,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M264.83,192.17c2.21-1.62,5.22-1.5,7.73-2.52
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","483"},
+							                  { "x","506"},
+							                  { "transform",""},
+							                  { "text", "هرمزگان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Hamadan,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M264.83,192.17c2.21-1.62,5.22-1.5,7.73-2.52
 						c2.76,2.13,6.25,2.74,9.34,4.26c2.25,1.14,4.65,1.97,7.06,2.72c1.83-0.79,3.19-2.23,4.36-3.79c1.56,0.83,3.17,1.56,4.79,2.27
 						c2.25,0.71,2.39,3.59,4.28,4.77c1.85,1.24,4.16,1.28,6.23,1.89c0.16,1.71-0.22,3.41-0.1,5.12c0.65,0.79,1.46,1.42,2.21,2.13
 						c-0.61,0.77-1.22,1.58-1.83,2.37c-1.26-0.22-2.56-0.26-3.53,0.71c0.63,1.02,1.36,1.97,2.03,2.96c-3.41,1.32-6.17,3.98-7.83,7.21
@@ -1157,25 +1157,25 @@ namespace DNTPersianComponents.Blazor
 						c-3.71-2.68-6.5-6.76-11.1-8.02c2.17-1.46,3.94-3.41,5.5-5.5c0-1.28,0-2.58,0.02-3.88c-1.77-0.99-3.57-1.93-5.38-2.8
 						c0.77-1.52,1.93-3.17,1.28-4.95c-0.75-2.4-0.93-4.87-0.73-7.37c1.71-0.55,3.49-0.89,5.26-0.28c2.17,0.59,2.72-2.15,3.13-3.69
 						C273.13,202.93,264.28,199.36,264.83,192.17z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y",""},
-                            { "x",""},
-                            { "transform","translate(280,227) rotate(-50)"},
-                            { "text", "همدان"}
-                        }
-                    }
-                }
-            },
-            {
-                IranProvince.Yazd,
-                new IranProvinceNameLocations
-                {
-                    PathData =
-                        @"M522.31,318.91c-0.98-1.47-2.33-2.08-2.57-4.89
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y",""},
+							                  { "x",""},
+							                  { "transform","translate(280,227) rotate(-50)"},
+							                  { "text", "همدان"}
+						                  }
+					                  }
+				}
+			},
+			{
+				IranProvince.Yazd,
+				new IranProvinceNameLocations
+				{
+					PathData =
+						@"M522.31,318.91c-0.98-1.47-2.33-2.08-2.57-4.89
 						c-0.24-2.81-1.35-5.02-2.57-6c-1.22-0.98-2.45-1.1-3.18-2.08c-0.73-0.98-0.61-2.94-1.59-4.16c-0.98-1.22-3.06-2.32-4.04-3.3
 						c-0.98-0.98-0.98-3.55-1.83-5.14c-0.86-1.59-2.03-1.29-3.22-2.73c-1.19-1.43-1.19-4.54-4.3-4.77c-3.1-0.24-3.1,0.48-4.3-1.67
 						c-1.19-2.15-4.3-4.3-4.3-4.3l-2.39-4.54l-4.35-3.67c-1.74,3.35-5.81,5.03-9.45,5.53c-0.77,3.04-3.63,4.89-4.44,7.96
@@ -1188,19 +1188,18 @@ namespace DNTPersianComponents.Blazor
 						c1.32-1.85,0.12-4.08-0.2-6.05c-0.83-4.08-2.54-8.02-2.68-12.18c1.07-1.85,3.49-2.42,5.38-3.21c4.08-1.75,7.93,3.15,11.89,1.04
 						c9.58-4.08,19.91-6.94,28.21-13.54c1.7-1.38,1.97-3.69,2.58-5.64c2.72-0.12,5.32,0.75,7.96,1.38c3.15-2.42,6.17-5.01,9.09-7.71
 						c0-1.97,0.04-3.94,0.12-5.89c0.83-0.06,1.65-0.13,2.48-0.2C523.24,321.58,522.71,319.52,522.31,318.91z",
-                   TextsAttributes = new List<Dictionary<string,object>>()
-                    {
-                        new Dictionary<string,object>(StringComparer.Ordinal){
-                            { "dx","1em"},
-                            { "text-anchor","middle" },
-                            { "y","326"},
-                            { "x","451"},
-                            { "transform",""},
-                            { "text", "یزد"}
-                        }
-                    }
-                }
-            },
-        };
-    }
+					TextsAttributes = new List<Dictionary<string,object>>()
+					                  {
+						                  new Dictionary<string,object>(StringComparer.Ordinal){
+							                  { "dx","1em"},
+							                  { "text-anchor","middle" },
+							                  { "y","326"},
+							                  { "x","451"},
+							                  { "transform",""},
+							                  { "text", "یزد"}
+						                  }
+					                  }
+				}
+			},
+		};
 }

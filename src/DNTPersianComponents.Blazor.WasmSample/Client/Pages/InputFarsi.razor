@@ -4,21 +4,19 @@
 <hr/>
 
 <EditForm class="container" Model="Model" OnValidSubmit="DoRegister">
-	<DataAnnotationsValidator />
+    <DataAnnotationsValidator/>
 
     <DntInputFarsi
-                @bind-Value="Model.Description"
-                LabelName="شرح"
-                FieldIcon="bi-person"
-                ConvertEnglishNumbers="true"
-                />
+        @bind-Value="Model.Description"
+        LabelName="شرح"
+        FieldIcon="bi-person"
+        ConvertEnglishNumbers="true"/>
 
     <DntInputTextAreaFarsi
-                @bind-Value="Model.Text"
-                LabelName="توضیح"
-                FieldIcon="bi-person"
-                ConvertEnglishNumbers="true"
-                />
+        @bind-Value="Model.Text"
+        LabelName="توضیح"
+        FieldIcon="bi-person"
+        ConvertEnglishNumbers="true"/>
 
-	<button type="submit" class="btn btn-primary btn-lg">ارسال</button>
+    <button type="submit" class="btn btn-primary btn-lg">ارسال</button>
 </EditForm>

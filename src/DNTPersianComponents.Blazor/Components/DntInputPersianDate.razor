@@ -1,16 +1,15 @@
-@namespace DNTPersianComponents.Blazor
-
+@namespace DNTPersianComponents.Blazor 
 @typeparam T
 @inherits InputBase<T>
 
 <div class="row mb-@InputRowMarginBottom">
-    @if(!string.IsNullOrWhiteSpace(LabelName))
+    @if (!string.IsNullOrWhiteSpace(LabelName))
     {
-      <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
+        <label class="col-form-label col-lg-@LabelColumnWidth" for="@ValueField.FieldName">@LabelName</label>
     }
     <div class="col-lg-@InputTextColumnWidth">
         <div class="input-group">
-            @if(!string.IsNullOrWhiteSpace(FieldIcon))
+            @if (!string.IsNullOrWhiteSpace(FieldIcon))
             {
                 <div class="input-group-text">
                     <span class="@FieldIcon" role="img" aria-label="@LabelName"></span>
@@ -24,52 +23,50 @@
                 class="@CssClass form-control"
                 value="@EnteredValue"
                 @oninput="OnInput"
-                @onfocus="OnFocus"
-                />
-            @if(ShowCalendarButton)
-            {				
-              <button class="btn btn-outline-secondary"
-                    title="@ShowCalendarLabel" type="button" @onclick="ShowCalendar">
-                <span class="@ShowCalendarIcon" role="img" style="cursor: pointer" aria-label="@ShowCalendarLabel"></span>
-              </button>
-            }			
+                @onfocus="OnFocus"/>
+            @if (ShowCalendarButton)
+            {
+                <button class="btn btn-outline-secondary"
+                        title="@ShowCalendarLabel" type="button" @onclick="ShowCalendar">
+                    <span class="@ShowCalendarIcon" role="img" style="cursor: pointer" aria-label="@ShowCalendarLabel"></span>
+                </button>
+            }
             <DntBsPopOver
-                    PopOverTop="@PopOverTop"
-                    PopOverLeft="@PopOverLeft"
-                    HeaderLabel="@LabelName"
-                    CloseTitle="بستن"
-                    @bind-IsVisible="@ShowCalendarPopOver">
+                PopOverTop="@PopOverTop"
+                PopOverLeft="@PopOverLeft"
+                HeaderLabel="@LabelName"
+                CloseTitle="بستن"
+                @bind-IsVisible="@ShowCalendarPopOver">
                 <PopOverBody>
                     <DntPersianCalendar
-                            FromYear="@CalendarFromYear"
-                            ToYear="@CalendarToYear"
-                            DayClicked="OnCalendarDayClicked"
-                            SelectedYear="@CalendarSelectedYear"
-                            SelectedMonth="@CalendarSelectedMonth"
-                            UseShortPersianDayNamesOfWeek="@CalendarUseShortPersianDayNamesOfWeek"
-                            ShowPreviousMonthIcon="@CalendarShowPreviousMonthIcon"
-                            ShowNextMonthIcon="@CalendarShowNextMonthIcon"
-                            ShowPreviousYearIcon="@CalendarShowPreviousYearIcon"
-                            ShowNextYearIcon="@CalendarShowNextYearIcon"
-                            SpinnerColor="@CalendarSpinnerColor"
-                            DayButtonsCss="@CalendarDayButtonsCss"
-                            TodayButtonCss="@CalendarTodayButtonCss"
-                            HolidayCss="@CalendarHolidayCss"
-                            TableCss="@CalendarTableCss"
-                            TableHeadCss="@CalendarTableHeadCss"
-                            NextPreviousButtonsCss="@CalendarNextPreviousButtonsCss"
-                            TodayHighlightCss="@CalendarTodayHighlightCss"
-                            ShowTodayButton="@CalendarShowTodayButton"
-                            ShowYearMonthDropdowns="@CalendarShowYearMonthDropdowns"
-                            ShowHolidays="@CalendarShowHolidays"
-                            HolidayTextCss="@CalendarHolidayTextCss"
-                            />
+                        FromYear="@CalendarFromYear"
+                        ToYear="@CalendarToYear"
+                        DayClicked="OnCalendarDayClicked"
+                        SelectedYear="@CalendarSelectedYear"
+                        SelectedMonth="@CalendarSelectedMonth"
+                        UseShortPersianDayNamesOfWeek="@CalendarUseShortPersianDayNamesOfWeek"
+                        ShowPreviousMonthIcon="@CalendarShowPreviousMonthIcon"
+                        ShowNextMonthIcon="@CalendarShowNextMonthIcon"
+                        ShowPreviousYearIcon="@CalendarShowPreviousYearIcon"
+                        ShowNextYearIcon="@CalendarShowNextYearIcon"
+                        SpinnerColor="@CalendarSpinnerColor"
+                        DayButtonsCss="@CalendarDayButtonsCss"
+                        TodayButtonCss="@CalendarTodayButtonCss"
+                        HolidayCss="@CalendarHolidayCss"
+                        TableCss="@CalendarTableCss"
+                        TableHeadCss="@CalendarTableHeadCss"
+                        NextPreviousButtonsCss="@CalendarNextPreviousButtonsCss"
+                        TodayHighlightCss="@CalendarTodayHighlightCss"
+                        ShowTodayButton="@CalendarShowTodayButton"
+                        ShowYearMonthDropdowns="@CalendarShowYearMonthDropdowns"
+                        ShowHolidays="@CalendarShowHolidays"
+                        HolidayTextCss="@CalendarHolidayTextCss"/>
                 </PopOverBody>
             </DntBsPopOver>
         </div>
-        @if(ValueExpression is not null)
-        { 
-          <ValidationMessage For="@ValueExpression" />
-        } 
+        @if (ValueExpression is not null)
+        {
+            <ValidationMessage For="@ValueExpression"/>
+        }
     </div>
 </div>
