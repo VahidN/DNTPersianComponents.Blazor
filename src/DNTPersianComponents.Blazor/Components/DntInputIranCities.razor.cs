@@ -96,19 +96,7 @@ public partial class DntInputIranCities
     public string? SelectedCounty
     {
         get => _selectedCounty;
-        set
-        {
-            if (string.Equals(_selectedCounty, value, StringComparison.Ordinal))
-            {
-                return;
-            }
-
-            _selectedCounty = value;
-            HideDistricts();
-            HideCities();
-            Districts = Iran.FindDistrictsOfSelectedCounty(_selectedProvince, _selectedCounty);
-            NotifySelectedCountyChanged(_selectedCounty);
-        }
+        set => SetSelectedCounty(value);
     }
 
     /// <summary>
@@ -134,18 +122,7 @@ public partial class DntInputIranCities
     public string? SelectedDistrict
     {
         get => _selectedDistrict;
-        set
-        {
-            if (string.Equals(_selectedDistrict, value, StringComparison.Ordinal))
-            {
-                return;
-            }
-
-            _selectedDistrict = value;
-            HideCities();
-            Cities = Iran.FindCitiesOfSelectedDistrict(_selectedProvince, _selectedCounty, _selectedDistrict);
-            NotifySelectedDistrictChanged(_selectedDistrict);
-        }
+        set => SetSelectedDistrict(value);
     }
 
     /// <summary>
@@ -171,17 +148,7 @@ public partial class DntInputIranCities
     public string? SelectedCity
     {
         get => _selectedCity;
-        set
-        {
-            if (string.Equals(_selectedCity, value, StringComparison.Ordinal))
-            {
-                return;
-            }
-
-            _selectedCity = value;
-            CityDivisionCode = FindSelectedCityCode();
-            NotifySelectedCityChanged(_selectedCity);
-        }
+        set => SetSelectedCity(value);
     }
 
     /// <summary>
@@ -205,16 +172,7 @@ public partial class DntInputIranCities
     public int? CityDivisionCode
     {
         get => _cityDivisionCode;
-        set
-        {
-            if (_cityDivisionCode == value)
-            {
-                return;
-            }
-
-            _cityDivisionCode = value;
-            NotifyCityDivisionCodeChanged(_cityDivisionCode);
-        }
+        set => SetCityDivisionCode(value);
     }
 
     /// <summary>
@@ -233,6 +191,56 @@ public partial class DntInputIranCities
 
     private BlazorFieldId<int?> CityField => new(CityDivisionCodeExpression);
     private IEnumerable<string> Provinces { get; set; } = Enumerable.Empty<string>();
+
+    private void SetSelectedCounty(string? value)
+    {
+        if (string.Equals(_selectedCounty, value, StringComparison.Ordinal))
+        {
+            return;
+        }
+
+        _selectedCounty = value;
+        HideDistricts();
+        HideCities();
+        Districts = Iran.FindDistrictsOfSelectedCounty(_selectedProvince, _selectedCounty);
+        NotifySelectedCountyChanged(_selectedCounty);
+    }
+
+    private void SetSelectedDistrict(string? value)
+    {
+        if (string.Equals(_selectedDistrict, value, StringComparison.Ordinal))
+        {
+            return;
+        }
+
+        _selectedDistrict = value;
+        HideCities();
+        Cities = Iran.FindCitiesOfSelectedDistrict(_selectedProvince, _selectedCounty, _selectedDistrict);
+        NotifySelectedDistrictChanged(_selectedDistrict);
+    }
+
+    private void SetSelectedCity(string? value)
+    {
+        if (string.Equals(_selectedCity, value, StringComparison.Ordinal))
+        {
+            return;
+        }
+
+        _selectedCity = value;
+        SetCityDivisionCode(FindSelectedCityCode());
+        NotifySelectedCityChanged(_selectedCity);
+    }
+
+    private void SetCityDivisionCode(int? value)
+    {
+        if (_cityDivisionCode == value)
+        {
+            return;
+        }
+
+        _cityDivisionCode = value;
+        NotifyCityDivisionCodeChanged(_cityDivisionCode);
+    }
 
     private int? FindSelectedCityCode()
     {
@@ -319,19 +327,19 @@ public partial class DntInputIranCities
     private void HideCities()
     {
         Cities = Enumerable.Empty<City>();
-        SelectedCity = string.Empty;
+        SetSelectedCity(string.Empty);
     }
 
     private void HideDistricts()
     {
         Districts = Enumerable.Empty<string>();
-        SelectedDistrict = string.Empty;
+        SetSelectedDistrict(string.Empty);
     }
 
     private void HideCounties()
     {
         Counties = Enumerable.Empty<string>();
-        SelectedCounty = string.Empty;
-        CityDivisionCode = 0;
+        SetSelectedCounty(string.Empty);
+        SetCityDivisionCode(0);
     }
 }

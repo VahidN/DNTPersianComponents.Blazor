@@ -67,19 +67,7 @@ public partial class DntBsPopOver
     public bool IsVisible
     {
         get => _isVisible;
-        set
-        {
-            if (_isVisible == value)
-            {
-                return;
-            }
-
-            _isVisible = value;
-            if (IsVisibleChanged.HasDelegate)
-            {
-                _ = IsVisibleChanged.InvokeAsync(_isVisible);
-            }
-        }
+        set => SetIsVisible(value);
     }
 
     /// <summary>
@@ -88,8 +76,22 @@ public partial class DntBsPopOver
     [Parameter]
     public EventCallback<bool> IsVisibleChanged { set; get; }
 
+    private void SetIsVisible(bool value)
+    {
+        if (_isVisible == value)
+        {
+            return;
+        }
+
+        _isVisible = value;
+        if (IsVisibleChanged.HasDelegate)
+        {
+            _ = IsVisibleChanged.InvokeAsync(_isVisible);
+        }
+    }
+
     internal void ClosePopOver()
     {
-        IsVisible = false;
+        SetIsVisible(false);
     }
 }

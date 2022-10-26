@@ -51,19 +51,7 @@ public partial class DntIranMap
     public IranProvince? SelectedProvince
     {
         get => _selectedProvince;
-        set
-        {
-            if (value.Equals(_selectedProvince))
-            {
-                return;
-            }
-
-            _selectedProvince = value;
-            if (SelectedProvinceChanged.HasDelegate)
-            {
-                _ = SelectedProvinceChanged.InvokeAsync(value);
-            }
-        }
+        set => SetSelectedProvince(value);
     }
 
     /// <summary>
@@ -79,19 +67,7 @@ public partial class DntIranMap
     public IranProvince? HoveredProvince
     {
         get => _hoveredProvince;
-        set
-        {
-            if (value.Equals(_hoveredProvince))
-            {
-                return;
-            }
-
-            _hoveredProvince = value;
-            if (HoveredProvinceChanged.HasDelegate)
-            {
-                _ = HoveredProvinceChanged.InvokeAsync(value);
-            }
-        }
+        set => SetHoveredProvince(value);
     }
 
     /// <summary>
@@ -239,6 +215,34 @@ public partial class DntIranMap
 
     private string ProvinceNameStyle => $"fill:{ProvinceNamesFill}; cursor: pointer;";
 
+    private void SetSelectedProvince(IranProvince? value)
+    {
+        if (value.Equals(_selectedProvince))
+        {
+            return;
+        }
+
+        _selectedProvince = value;
+        if (SelectedProvinceChanged.HasDelegate)
+        {
+            _ = SelectedProvinceChanged.InvokeAsync(value);
+        }
+    }
+
+    private void SetHoveredProvince(IranProvince? value)
+    {
+        if (value.Equals(_hoveredProvince))
+        {
+            return;
+        }
+
+        _hoveredProvince = value;
+        if (HoveredProvinceChanged.HasDelegate)
+        {
+            _ = HoveredProvinceChanged.InvokeAsync(value);
+        }
+    }
+
     private async Task ProvinceClickedAsync(IranProvince province, MouseEventArgs args)
     {
         if (IranProvincesTitles.Count > 0)
@@ -248,17 +252,17 @@ public partial class DntIranMap
             PopOverIsVisible[province] = true;
         }
 
-        SelectedProvince = province;
+        SetSelectedProvince(province);
     }
 
     private void ProvinceOnMouseOver(IranProvince province)
     {
-        HoveredProvince = province;
+        SetHoveredProvince(province);
     }
 
     private void ProvinceOnMouseOut()
     {
-        HoveredProvince = null;
+        SetHoveredProvince(null);
     }
 
     /// <summary>

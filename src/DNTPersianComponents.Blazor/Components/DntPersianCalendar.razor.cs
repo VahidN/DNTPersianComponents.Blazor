@@ -38,15 +38,7 @@ public partial class DntPersianCalendar
     public int SelectedMonth
     {
         get => _selectedMonth;
-        set
-        {
-            var hasChanged = !EqualityComparer<int>.Default.Equals(value, _selectedMonth);
-            if (hasChanged)
-            {
-                _selectedMonth = value;
-                SelectedMonthChanged?.Invoke(value);
-            }
-        }
+        set => SetSelectedMonth(value);
     }
 
     /// <summary>
@@ -62,15 +54,7 @@ public partial class DntPersianCalendar
     public int SelectedYear
     {
         get => _selectedYear;
-        set
-        {
-            var hasChanged = !EqualityComparer<int>.Default.Equals(value, _selectedYear);
-            if (hasChanged)
-            {
-                _selectedYear = value;
-                SelectedYearChanged?.Invoke(value);
-            }
-        }
+        set => SetSelectedYear(value);
     }
 
     /// <summary>
@@ -208,6 +192,26 @@ public partial class DntPersianCalendar
     [Parameter]
     public Func<EventDate, Task<IReadOnlyList<PersianDayEvents>>>? PrepareEventsList { set; get; }
 
+    private void SetSelectedMonth(int value)
+    {
+        var hasChanged = !EqualityComparer<int>.Default.Equals(value, _selectedMonth);
+        if (hasChanged)
+        {
+            _selectedMonth = value;
+            SelectedMonthChanged?.Invoke(value);
+        }
+    }
+
+    private void SetSelectedYear(int value)
+    {
+        var hasChanged = !EqualityComparer<int>.Default.Equals(value, _selectedYear);
+        if (hasChanged)
+        {
+            _selectedYear = value;
+            SelectedYearChanged?.Invoke(value);
+        }
+    }
+
     /// <summary>
     ///     Method invoked when the component has received parameters from its parent.
     /// </summary>
@@ -218,7 +222,7 @@ public partial class DntPersianCalendar
         var value = args.Value?.ToString();
         if (int.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out var month))
         {
-            SelectedMonth = month;
+            SetSelectedMonth(month);
             return CreateCalendarAsync();
         }
 
@@ -230,7 +234,7 @@ public partial class DntPersianCalendar
         var value = args.Value?.ToString();
         if (int.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out var year))
         {
-            SelectedYear = year;
+            SetSelectedYear(year);
             return CreateCalendarAsync();
         }
 
@@ -250,12 +254,12 @@ public partial class DntPersianCalendar
 
             if (SelectedMonth <= 0)
             {
-                SelectedMonth = _today.Month;
+                SetSelectedMonth(_today.Month);
             }
 
             if (SelectedYear <= 0)
             {
-                SelectedYear = _today.Year;
+                SetSelectedYear(_today.Year);
             }
 
             CalendarCells = SelectedYear.CreatePersianMonthCalendar(SelectedMonth);
@@ -275,7 +279,7 @@ public partial class DntPersianCalendar
     {
         if (SelectedMonth == 1)
         {
-            SelectedMonth = 12;
+            SetSelectedMonth(12);
             return ShowPreviousYearAsync();
         }
 
@@ -287,7 +291,7 @@ public partial class DntPersianCalendar
     {
         if (SelectedMonth == 12)
         {
-            SelectedMonth = 1;
+            SetSelectedMonth(1);
             return ShowNextYearAsync();
         }
 
@@ -319,8 +323,8 @@ public partial class DntPersianCalendar
 
     private Task ShowTodayAsync()
     {
-        SelectedYear = _today.Year;
-        SelectedMonth = _today.Month;
+        SetSelectedYear(_today.Year);
+        SetSelectedMonth(_today.Month);
         return CreateCalendarAsync();
     }
 
