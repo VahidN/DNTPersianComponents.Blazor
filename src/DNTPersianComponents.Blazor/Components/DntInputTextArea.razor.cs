@@ -39,7 +39,7 @@ public partial class DntInputTextArea
     public string FieldIcon { set; get; } = default!;
 
     private BlazorFieldId<string?> ValueField => new(ValueExpression);
-    private string Direction { set; get; } = "ltr";
+    private string? Direction { set; get; }
 
     /// <summary>
     ///     Method invoked when the component has received parameters from its parent.
@@ -72,6 +72,13 @@ public partial class DntInputTextArea
 
     private void SetDirection(string? value)
     {
-        Direction = value.ContainsFarsi() ? "rtl" : "ltr";
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            Direction = null;
+        }
+        else
+        {
+            Direction = value.ContainsFarsi() ? "rtl" : "ltr";
+        }
     }
 }

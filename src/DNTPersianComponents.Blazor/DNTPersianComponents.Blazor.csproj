@@ -1,79 +1,84 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-  <PropertyGroup>
-    <TargetFrameworks>net6.0;</TargetFrameworks>
-    <BlazorLinkOnBuild Condition="'$(Configuration)'!='Release'">false</BlazorLinkOnBuild>
-    <Description>DNT Persian Blazor's shared components library.</Description>
-    <VersionPrefix>1.2.7</VersionPrefix>
-    <Authors>Vahid Nasiri</Authors>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>DNTPersianComponents.Blazor</AssemblyName>
-    <PackageId>DNTPersianComponents.Blazor</PackageId>
-    <PackageTags>blazor</PackageTags>
-    <PackageProjectUrl>https://github.com/VahidN/DNTPersianComponents.Blazor</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/VahidN/DNTPersianComponents.Blazor</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <DebugType>embedded</DebugType>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-  </PropertyGroup>
-  <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
-  <PropertyGroup>
-    <LangVersion>Latest</LangVersion>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <Nullable>enable</Nullable>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    <Deterministic>true</Deterministic>
-    <Features>strict</Features>
-    <ReportAnalyzer>true</ReportAnalyzer>
-    <NoWarn>NU5118;NU5104;</NoWarn>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.743">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.3.48">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="AsyncFixer" Version="1.6.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Asyncify" Version="0.9.7">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.47.0.55603">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup Condition="('$(TargetFramework)' == 'net6.0')">
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0,)" />
-    <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.5,)" />
-  </ItemGroup>
-  <PropertyGroup Condition="('$(TargetFramework)' == 'net6.0')">
-    <DefineConstants>NET6_0</DefineConstants>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>net7.0;net6.0;</TargetFrameworks>
+        <BlazorLinkOnBuild Condition="'$(Configuration)'!='Release'">false</BlazorLinkOnBuild>
+        <Description>DNT Persian Blazor's shared components library.</Description>
+        <VersionPrefix>1.2.8</VersionPrefix>
+        <Authors>Vahid Nasiri</Authors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyName>DNTPersianComponents.Blazor</AssemblyName>
+        <PackageId>DNTPersianComponents.Blazor</PackageId>
+        <PackageTags>blazor</PackageTags>
+        <PackageProjectUrl>https://github.com/VahidN/DNTPersianComponents.Blazor</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/VahidN/DNTPersianComponents.Blazor</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <DebugType>embedded</DebugType>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    </PropertyGroup>
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+    <PropertyGroup>
+        <LangVersion>Latest</LangVersion>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+        <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+        <Deterministic>true</Deterministic>
+        <Features>strict</Features>
+        <ReportAnalyzer>true</ReportAnalyzer>
+        <NoWarn>NU5118;NU5104;</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Meziantou.Analyzer" Version="1.0.750">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.4.27">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="AsyncFixer" Version="1.6.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Asyncify" Version="0.9.7">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.49.0.57237">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+    </ItemGroup>
+    <ItemGroup Condition="('$(TargetFramework)' == 'net6.0')">
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0,)"/>
+        <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.6,)"/>
+    </ItemGroup>
+    <PropertyGroup Condition="('$(TargetFramework)' == 'net6.0')">
+        <DefineConstants>NET6_0</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup Condition="('$(TargetFramework)' == 'net7.0')">
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[7.0.0,)"/>
+        <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.6,)"/>
+    </ItemGroup>
+    <PropertyGroup Condition="('$(TargetFramework)' == 'net7.0')">
+        <DefineConstants>NET7_0</DefineConstants>
+    </PropertyGroup>
 </Project>
