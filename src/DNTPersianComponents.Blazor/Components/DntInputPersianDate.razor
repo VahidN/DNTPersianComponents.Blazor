@@ -31,6 +31,34 @@
                     <span class="@ShowCalendarIcon" role="img" style="cursor: pointer" aria-label="@ShowCalendarLabel"></span>
                 </button>
             }
+            @if (ShowInputTime)
+            {
+                <div class="input-group-text">
+                    <span>@HourLabel</span>
+                </div>
+                <select class="form-select"
+                        name="@(UniqueId)Start"
+                        @onchange="@(e => OnTimeSpanValueChanged(e, true))">
+                    <option hidden disabled selected value></option>
+                    @for (var hour = StartTime.Hours; hour <= 23; hour++)
+                    {
+                        <option value="@hour" selected="@(TimeSpanValue.Hours == hour)">@hour.ToString("00")</option>
+                    }
+                </select>
+                <div class="input-group-text">
+                    <span>@MinuteLabel</span>
+                </div>
+                <select class="form-select"
+                        @attributes="@AdditionalAttributes"
+                        name="@(UniqueId)End"
+                        @onchange="@(e => OnTimeSpanValueChanged(e, false))">
+                    <option hidden disabled selected value></option>
+                    @for (var minute = 0; minute <= 59; minute += MinutesSteps)
+                    {
+                        <option value="@minute" selected="@(TimeSpanValue.Minutes == minute)">@minute.ToString("00")</option>
+                    }
+                </select>
+            }
             <DntBsPopOver
                 PopOverTop="@PopOverTop"
                 PopOverLeft="@PopOverLeft"

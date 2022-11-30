@@ -13,7 +13,11 @@ public partial class DntInputPersianDate<T>
 {
     private string? _enteredValue;
 
+    private TimeSpan _timeSpanValue = TimeSpan.Zero;
+
     private BlazorFieldId<T> ValueField => new(ValueExpression);
+
+    private string UniqueId { set; get; } = Guid.NewGuid().ToString("N");
 
     private bool ShowCalendarPopOver { set; get; }
     private int CalendarSelectedYear { set; get; }
@@ -200,6 +204,18 @@ public partial class DntInputPersianDate<T>
     public string PopOverLeft { set; get; } = "20px";
 
     /// <summary>
+    ///     Its default value is `ساعت`.
+    /// </summary>
+    [Parameter]
+    public string HourLabel { set; get; } = "ساعت";
+
+    /// <summary>
+    ///     Its default value is `دقيقه`.
+    /// </summary>
+    [Parameter]
+    public string MinuteLabel { set; get; } = "دقيقه";
+
+    /// <summary>
     ///     The top position of the popover. Its default value is `20px`.
     /// </summary>
     [Parameter]
@@ -218,6 +234,12 @@ public partial class DntInputPersianDate<T>
     public bool ShowCalendarButton { set; get; } = true;
 
     /// <summary>
+    ///     Should we show the `InputTime`? Its default value is `false`.
+    /// </summary>
+    [Parameter]
+    public bool ShowInputTime { set; get; }
+
+    /// <summary>
     ///     Should we show the entered date with Persian numbers?
     /// </summary>
     [Parameter]
@@ -229,6 +251,27 @@ public partial class DntInputPersianDate<T>
     /// </summary>
     [Parameter]
     public string ParsingErrorMessage { get; set; } = "لطفا در ورودی {0} تاریخ شمسی معتبری را وارد نمائید.";
+
+    /// <summary>
+    ///     How to display the minutes dropdown. Minute interval.
+    /// </summary>
+    [Parameter]
+    public int MinutesSteps { get; set; } = 5;
+
+    /// <summary>
+    ///     The start time of the dropdown. From which time you want the TimePicker to start from.
+    /// </summary>
+    [Parameter]
+    public TimeSpan StartTime { get; set; } = TimeSpan.Zero;
+
+    /// <summary>
+    ///     The current selected time value
+    /// </summary>
+    private TimeSpan TimeSpanValue
+    {
+        get => _timeSpanValue;
+        set => SetTimeSpanValue(value);
+    }
 
     /// <summary>
     ///     Method invoked when the component is ready to start.
@@ -258,7 +301,8 @@ public partial class DntInputPersianDate<T>
         if (firstRender)
         {
             EnteredValue = CurrentValueAsString;
-            ValueField.NotifyFieldChanged(EditContext);
+            TimeSpanValue = Value?.GetTimeOfDayPart() ?? TimeSpan.Zero;
+            NotifyValidationStateChanged();
         }
     }
 
@@ -334,5 +378,44 @@ public partial class DntInputPersianDate<T>
             throw new
                 InvalidOperationException("The `Value` type is not a supported `date` type. DateTime, DateTime?, DateTimeOffset and DateTimeOffset? are supported.");
         }
+    }
+
+    private void SetTimeSpanValue(TimeSpan value)
+    {
+        if (TimeSpan.Equals(_timeSpanValue, value))
+        {
+            return;
+        }
+
+        _timeSpanValue = value;
+
+        if (ValueChanged.HasDelegate)
+        {
+            _ = ValueChanged.InvokeAsync(Value.UpdateTimeOfDayPart(value));
+        }
+    }
+
+    private void OnTimeSpanValueChanged(ChangeEventArgs e, bool hours)
+    {
+        var isTimeNotSelected = StartTime != TimeSpan.Zero && TimeSpanValue.Hours < StartTime.Hours;
+        var startTimeHours = isTimeNotSelected ? StartTime.Hours : TimeSpanValue.Hours;
+        SetTimeSpanValue(hours
+                             ? TimeSpan.Parse(FormattableString.Invariant($"{e.Value}:{TimeSpanValue.Minutes}"),
+                                              CultureInfo.InvariantCulture)
+                             : TimeSpan.Parse(FormattableString.Invariant($"{startTimeHours}:{e.Value}"),
+                                              CultureInfo.InvariantCulture));
+        NotifyValidationStateChanged();
+    }
+
+    private void NotifyValidationStateChanged()
+    {
+        if (EditContext is null)
+        {
+            throw new InvalidOperationException($"{GetType()} requires a cascading parameter " +
+                                                $"of type {nameof(EditContext)}. For example, you can use {GetType().FullName} inside " +
+                                                "an EditForm.");
+        }
+
+        ValueField.NotifyFieldChanged(EditContext);
     }
 }
