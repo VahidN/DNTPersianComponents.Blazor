@@ -14,7 +14,7 @@ jobs:
       with:
         dotnet-version: 7.0.203
     - name: Build DNTCommon.Blazor lib
-      run: dotnet build ./src/DNTPersianComponents.Blazor.WasmSample/Server/DNTPersianComponents.Blazor.WasmSample.Server.csproj --configuration Release
+      run: dotnet build ./src/DNTPersianComponents.Blazor/DNTPersianComponents.Blazor.csproj --configuration Release
 
     - name: Push Package to NuGet.org
       if: github.event_name == 'push'
