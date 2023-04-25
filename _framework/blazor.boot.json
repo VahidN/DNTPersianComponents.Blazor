@@ -7,8 +7,8 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "DNTPersianComponents.Blazor.dll": "sha256-DOP4KXxdY+TD944gDxC4LoFyAfrxkJpVVD2V3Qy2Ezc=",
-      "DNTPersianComponents.Blazor.WasmSample.Client.dll": "sha256-KxR2EBs5D8dJZmTUmUuhwfNuTRBqywS+yzH\/UYIG2Yc=",
+      "DNTPersianComponents.Blazor.dll": "sha256-cZN7KmS7fzJiHXCyxBPNiV\/az0VTeUyskmiXSJKG1nw=",
+      "DNTPersianComponents.Blazor.WasmSample.Client.dll": "sha256-anfiEzusO7Btl29mYY\/IVu3RSuH2fnjlkRpyZKh4Ysc=",
       "DNTPersianComponents.Blazor.WasmSample.Shared.dll": "sha256-GfTQQSkkxDv10nHvHWuYACXhQJ6CCv6AscybiQQ2p1k=",
       "DNTPersianUtils.Core.dll": "sha256-HguCtvdbc5RdGTJznG0ispB4bJzxhbnD58hrdZLiykk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-VbT3wyzFSFltxVKwy6m66UFRvSazonFr9jaNNqz0cAg=",
