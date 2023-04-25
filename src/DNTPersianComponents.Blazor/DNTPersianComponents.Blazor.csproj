@@ -3,7 +3,7 @@
         <TargetFrameworks>net7.0;net6.0;</TargetFrameworks>
         <BlazorLinkOnBuild Condition="'$(Configuration)'!='Release'">false</BlazorLinkOnBuild>
         <Description>DNT Persian Blazor's shared components library.</Description>
-        <VersionPrefix>1.3.0</VersionPrefix>
+        <VersionPrefix>1.3.1</VersionPrefix>
         <Authors>Vahid Nasiri</Authors>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyName>DNTPersianComponents.Blazor</AssemblyName>
@@ -17,11 +17,10 @@
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <DebugType>embedded</DebugType>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
@@ -43,11 +42,11 @@
         <NoWarn>NU5118;NU5104;</NoWarn>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Meziantou.Analyzer" Version="1.0.756">
+        <PackageReference Include="Meziantou.Analyzer" Version="2.0.37">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.4.27">
+        <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.5.22">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -59,7 +58,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.49.0.57237">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.56.0.67649">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -69,14 +68,14 @@
     </ItemGroup>
     <ItemGroup Condition="('$(TargetFramework)' == 'net6.0')">
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[6.0.0,)"/>
-        <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.9,)"/>
+        <PackageReference Include="DNTPersianUtils.Core" Version="[5.6.0,)"/>
     </ItemGroup>
     <PropertyGroup Condition="('$(TargetFramework)' == 'net6.0')">
         <DefineConstants>NET6_0</DefineConstants>
     </PropertyGroup>
     <ItemGroup Condition="('$(TargetFramework)' == 'net7.0')">
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="[7.0.0,)"/>
-        <PackageReference Include="DNTPersianUtils.Core" Version="[5.4.9,)"/>
+        <PackageReference Include="DNTPersianUtils.Core" Version="[5.6.0,)"/>
     </ItemGroup>
     <PropertyGroup Condition="('$(TargetFramework)' == 'net7.0')">
         <DefineConstants>NET7_0</DefineConstants>

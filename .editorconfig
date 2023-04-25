@@ -5,6 +5,10 @@ charset = utf-8-bom
 [*.cs]
 
 dotnet_diagnostic.MA0121.severity = warning
+dotnet_diagnostic.MA0026.severity = suggestion
+dotnet_diagnostic.S1135.severity = suggestion
+dotnet_diagnostic.CA2007.severity = suggestion
+dotnet_diagnostic.CA1510.severity = suggestion
 
 # Set severity for all of the Roslynator's analyzers
 # dotnet_analyzer_diagnostic.category-roslynator.severity = warning

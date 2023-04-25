@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -341,7 +342,7 @@ public partial class DntPersianCalendar
         return day.Holidays is not null || cellNumber == 6 ? HolidayTextCss : string.Empty;
     }
 
-    private IReadOnlyList<DayEvent> GetDayEvents(PersianDay? day)
+    private ReadOnlyCollection<DayEvent> GetDayEvents(PersianDay? day)
     {
         if (day is null || _currentEvents is null)
         {
